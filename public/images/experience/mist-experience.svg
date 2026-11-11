@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 600" width="100%" height="100%">
+  <defs>
+    <linearGradient id="expGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#0F261C" />
+      <stop offset="50%" stop-color="#183B2C" />
+      <stop offset="100%" stop-color="#0F261C" />
+    </linearGradient>
+    <radialGradient id="centerLight" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#C6A66A" stop-opacity="0.3" />
+      <stop offset="60%" stop-color="#183B2C" stop-opacity="0.05" />
+      <stop offset="100%" stop-color="#0F261C" stop-opacity="0" />
+    </radialGradient>
+  </defs>
+  <rect width="1600" height="600" fill="url(#expGrad)" />
+  <circle cx="800" cy="300" r="450" fill="url(#centerLight)" />
+
+  <!-- Flowing Incense Smoke Stream across width -->
+  <path d="M0 350 C300 280, 500 420, 800 300 C1100 180, 1300 340, 1600 260" fill="none" stroke="#DDE8D5" stroke-width="3" opacity="0.4" stroke-linecap="round" />
+  <path d="M0 320 C350 400, 650 220, 800 320 C950 420, 1250 240, 1600 330" fill="none" stroke="#DFCA95" stroke-width="2" opacity="0.3" stroke-linecap="round" />
+  <path d="M200 450 C450 350, 700 380, 800 260 C900 140, 1150 250, 1400 180" fill="none" stroke="#F8F6ED" stroke-width="1.5" opacity="0.4" stroke-dasharray="4 6" />
+</svg>

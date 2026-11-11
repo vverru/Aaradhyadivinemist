@@ -1,0 +1,90 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 900" width="100%" height="100%">
+  <defs>
+    <radialGradient id="sunbeam" cx="70%" cy="25%" r="65%">
+      <stop offset="0%" stop-color="#FFF8E7" stop-opacity="0.9" />
+      <stop offset="40%" stop-color="#DDE8D5" stop-opacity="0.4" />
+      <stop offset="70%" stop-color="#183B2C" stop-opacity="0.85" />
+      <stop offset="100%" stop-color="#0F261C" stop-opacity="1" />
+    </radialGradient>
+    <linearGradient id="warmLight" x1="100%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#FFE082" stop-opacity="0.3" />
+      <stop offset="100%" stop-color="#183B2C" stop-opacity="0" />
+    </linearGradient>
+    <filter id="divineGlow" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="14" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+  </defs>
+
+  <!-- Deep Sacred Forest Green Backdrop -->
+  <rect width="1200" height="900" fill="#0F261C" />
+  <rect width="1200" height="900" fill="url(#sunbeam)" />
+  <rect width="1200" height="900" fill="url(#warmLight)" />
+
+  <!-- Temple Mandir Archway Silhouettes -->
+  <path d="M650 900 L650 350 C650 200, 800 120, 950 120 C1100 120, 1200 200, 1200 350 L1200 900 Z" fill="#143225" opacity="0.4" />
+  <path d="M720 900 L720 400 C720 280, 830 200, 950 200 C1070 200, 1150 280, 1150 400 L1150 900 Z" fill="#183B2C" opacity="0.6" />
+
+  <!-- Carved Stone Temple Pedestal -->
+  <ellipse cx="880" cy="740" rx="260" ry="60" fill="#10251C" stroke="#C6A66A" stroke-width="1.5" stroke-opacity="0.4" />
+  <ellipse cx="880" cy="730" rx="240" ry="50" fill="#183B2C" stroke="#DFCA95" stroke-width="1" stroke-opacity="0.3" />
+
+  <!-- Traditional Pure Brass Diya Glowing -->
+  <g transform="translate(740, 680)">
+    <!-- Brass diya base -->
+    <ellipse cx="0" cy="20" rx="55" ry="16" fill="#C6A66A" stroke="#DFCA95" stroke-width="1.5" filter="url(#divineGlow)" />
+    <path d="M-55 20 C-50 40, 50 40, 55 20 Z" fill="#9E824C" />
+    <path d="M-15 0 C-5 -25, 25 -25, 35 0 Z" fill="#DFCA95" />
+    <!-- Diya golden oil pool -->
+    <ellipse cx="0" cy="18" rx="42" ry="10" fill="#FFA726" />
+    <!-- Diya Divine Flame -->
+    <path d="M15 15 C18 5, 25 -15, 22 -35 C18 -20, 10 -5, 15 15 Z" fill="#FFD54F" filter="url(#divineGlow)" />
+    <path d="M16 10 C18 2, 22 -10, 20 -25 C17 -15, 13 -3, 16 10 Z" fill="#FFF8E7" />
+    <!-- Flame halo -->
+    <circle cx="20" cy="-25" r="30" fill="#FFA726" opacity="0.25" filter="url(#divineGlow)" />
+  </g>
+
+  <!-- Incense Sticks in Carved Brass Stand -->
+  <g transform="translate(940, 670)">
+    <!-- Stand -->
+    <ellipse cx="0" cy="40" rx="40" ry="12" fill="#C6A66A" stroke="#DFCA95" stroke-width="1.2" />
+    <cylinder />
+    <!-- 3 Glowing Incense Sticks burning gracefully -->
+    <!-- Stick 1 -->
+    <line x1="-10" y1="35" x2="-60" y2="-220" stroke="#795548" stroke-width="4.5" stroke-linecap="round" />
+    <circle cx="-60" cy="-220" r="4.5" fill="#FF7043" filter="url(#divineGlow)" />
+    <circle cx="-60" cy="-220" r="2.5" fill="#FFF3E0" />
+    <!-- Delicate Smoke Plume 1 -->
+    <path d="M-60 -220 C-80 -270, -30 -330, -70 -390 C-110 -450, -20 -510, -60 -580" fill="none" stroke="#DDE8D5" stroke-width="3" stroke-linecap="round" stroke-opacity="0.75" />
+    <path d="M-60 -220 C-40 -260, -90 -310, -50 -380 C-10 -450, -80 -500, -30 -570" fill="none" stroke="#F8F6ED" stroke-width="1.8" stroke-linecap="round" stroke-opacity="0.8" />
+
+    <!-- Stick 2 -->
+    <line x1="5" y1="35" x2="25" y2="-250" stroke="#6D4C41" stroke-width="4.5" stroke-linecap="round" />
+    <circle cx="25" cy="-250" r="4.5" fill="#FF5722" filter="url(#divineGlow)" />
+    <!-- Delicate Smoke Plume 2 -->
+    <path d="M25 -250 C45 -310, -10 -370, 35 -440 C80 -510, 10 -580, 50 -650" fill="none" stroke="#DFCA95" stroke-width="2.5" stroke-linecap="round" stroke-opacity="0.7" />
+
+    <!-- Sacred Smoke clouds floating into the morning light -->
+    <path d="M-30 -420 C50 -460, 120 -440, 180 -480 C240 -520, 200 -560, 260 -600" fill="none" stroke="#DDE8D5" stroke-width="4" stroke-opacity="0.35" stroke-linecap="round" filter="url(#divineGlow)" />
+  </g>
+
+  <!-- Sacred Offerings: Mogra and Marigold Petals on the marble altar -->
+  <g transform="translate(860, 750)">
+    <circle cx="-90" cy="10" r="7" fill="#F8BBD0" opacity="0.9" />
+    <circle cx="-80" cy="18" r="6" fill="#F48FB1" opacity="0.9" />
+    <circle cx="-65" cy="12" r="8" fill="#F8F6ED" opacity="0.95" />
+    <circle cx="40" cy="15" r="7" fill="#FFB74D" opacity="0.9" />
+    <circle cx="55" cy="12" r="8" fill="#FFA726" opacity="0.95" />
+    <circle cx="70" cy="18" r="6" fill="#F8F6ED" opacity="0.9" />
+  </g>
+
+  <!-- Gold Leaf Particles Floating in Light Rays -->
+  <g opacity="0.6">
+    <circle cx="780" cy="340" r="2.5" fill="#DFCA95" filter="url(#divineGlow)" />
+    <circle cx="850" cy="280" r="2" fill="#DFCA95" filter="url(#divineGlow)" />
+    <circle cx="910" cy="380" r="3" fill="#DFCA95" filter="url(#divineGlow)" />
+    <circle cx="720" cy="460" r="1.8" fill="#DFCA95" />
+    <circle cx="980" cy="310" r="2.2" fill="#DFCA95" />
+    <circle cx="830" cy="480" r="2" fill="#DFCA95" />
+  </g>
+</svg>
