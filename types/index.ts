@@ -109,6 +109,7 @@ export interface OrderItem {
   quantity: number;
   image: string;
   subtotal: number;
+  slug?: string;
 }
 
 export type OrderStatus =

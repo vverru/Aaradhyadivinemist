@@ -128,14 +128,17 @@ export default function CartPage() {
             <div className="bg-white rounded-xl border border-brand-gold/20 shadow-sm divide-y divide-brand-gold/15">
               {items.map((item) => (
                 <div key={item.productId} className="p-4 sm:p-6 flex gap-4 sm:gap-6 items-center">
-                  <div className="relative w-20 h-20 sm:w-24 sm:h-24 bg-brand-ivory rounded-lg overflow-hidden shrink-0 border border-brand-gold/15">
+                  <Link
+                    href={`/shop/${item.slug}`}
+                    className="relative w-20 h-20 sm:w-24 sm:h-24 bg-brand-ivory rounded-lg overflow-hidden shrink-0 border border-brand-gold/15 block hover:opacity-85 transition-opacity"
+                  >
                     <Image
                       src={item.image}
                       alt={item.productName}
                       fill
                       className="object-cover"
                     />
-                  </div>
+                  </Link>
 
                   <div className="flex-1 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
                     <div>

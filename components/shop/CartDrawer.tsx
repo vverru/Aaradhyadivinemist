@@ -59,7 +59,7 @@ export const CartDrawer: React.FC = () => {
         onClick={closeCartDrawer}
       />
 
-      <div className="fixed inset-y-0 right-0 max-w-full flex pl-10">
+      <div className="fixed inset-y-0 right-0 max-w-full flex pl-0 sm:pl-10">
         <div className="w-screen max-w-md bg-brand-ivory border-l border-brand-gold/30 shadow-2xl flex flex-col justify-between animate-slide-left">
           {/* Header */}
           <div className="p-6 border-b border-brand-gold/20 flex items-center justify-between bg-brand-ivory">
@@ -131,14 +131,18 @@ export const CartDrawer: React.FC = () => {
                   key={item.productId}
                   className="flex gap-4 p-3.5 bg-white/70 rounded-lg border border-brand-gold/15 shadow-sm"
                 >
-                  <div className="relative w-20 h-20 rounded bg-brand-ivory shrink-0 overflow-hidden border border-brand-gold/10">
+                  <Link
+                    href={`/shop/${item.slug}`}
+                    onClick={closeCartDrawer}
+                    className="relative w-20 h-20 rounded bg-brand-ivory shrink-0 overflow-hidden border border-brand-gold/10 block hover:opacity-85 transition-opacity"
+                  >
                     <Image
                       src={item.image}
                       alt={item.productName}
                       fill
                       className="object-cover"
                     />
-                  </div>
+                  </Link>
                   <div className="flex-1 flex flex-col justify-between">
                     <div>
                       <div className="flex justify-between items-start gap-2">
@@ -205,7 +209,7 @@ export const CartDrawer: React.FC = () => {
 
           {/* Footer Checkout Summary */}
           {items.length > 0 && (
-            <div className="p-6 bg-brand-ivory border-t border-brand-gold/25 space-y-4">
+            <div className="p-6 pb-[calc(1.5rem+env(safe-area-inset-bottom,0px))] bg-brand-ivory border-t border-brand-gold/25 space-y-4">
               {/* Coupon Form */}
               {appliedCoupon ? (
                 <div className="flex items-center justify-between p-2.5 bg-brand-sage/50 border border-brand-gold/30 rounded text-xs text-brand-forest">

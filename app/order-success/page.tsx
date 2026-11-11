@@ -210,18 +210,24 @@ function OrderSuccessContent() {
               {order.items.map((item, idx) => (
                 <div key={idx} className="p-4 flex items-center justify-between text-xs font-sans gap-4">
                   <div className="flex items-center gap-3">
-                    <div className="relative w-12 h-12 rounded bg-brand-ivory overflow-hidden shrink-0 border border-brand-gold/20">
+                    <Link
+                      href={item.slug ? `/shop/${item.slug}` : '/shop'}
+                      className="relative w-12 h-12 rounded bg-brand-ivory overflow-hidden shrink-0 border border-brand-gold/20 block hover:opacity-85 transition-opacity"
+                    >
                       <Image
                         src={item.image}
                         alt={item.productName}
                         fill
                         className="object-cover"
                       />
-                    </div>
+                    </Link>
                     <div>
-                      <p className="font-bold text-brand-forest text-sm font-serif">
+                      <Link
+                        href={item.slug ? `/shop/${item.slug}` : '/shop'}
+                        className="font-bold text-brand-forest text-sm font-serif hover:text-brand-gold transition-colors block"
+                      >
                         {item.productName}
-                      </p>
+                      </Link>
                       <p className="text-stone-500 text-[11px]">
                         Pack Size: {item.packSize} • Qty: {item.quantity}
                       </p>

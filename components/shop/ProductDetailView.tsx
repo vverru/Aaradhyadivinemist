@@ -21,6 +21,7 @@ import {
   AlertCircle,
   Award,
   ChevronRight,
+  ChevronLeft,
   Send,
 } from 'lucide-react';
 import { Product, Review } from '@/types';
@@ -185,10 +186,10 @@ export const ProductDetailView: React.FC<ProductDetailViewProps> = ({
   };
 
   return (
-    <div className="bg-brand-ivory min-h-screen py-10 sm:py-16">
+    <div className="bg-brand-ivory min-h-screen py-8 sm:py-12 lg:py-16 pb-28 sm:pb-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Breadcrumb Navigation */}
-        <nav className="text-xs font-sans text-brand-text-muted mb-8 flex flex-wrap items-center gap-2">
+        <nav className="text-xs font-sans text-brand-text-muted mb-6 sm:mb-8 flex flex-wrap items-center gap-2">
           <Link href="/" className="hover:text-brand-forest">
             Home
           </Link>
@@ -209,15 +210,15 @@ export const ProductDetailView: React.FC<ProductDetailViewProps> = ({
           </span>
         </nav>
 
-        {/* Product Showcase: Left Gallery & Right Details */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-start">
+        {/* Product Showcase: Left Gallery & Right Details (Tablet: 2 columns, Mobile: 1 column, Desktop: 2 columns) */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-10 lg:gap-16 items-start">
           {/* =========================================================================
               LEFT: IMAGE GALLERY & ZOOM
               ========================================================================= */}
           <div className="space-y-4">
-            {/* Main Stage Image with Zoom Preview */}
+            {/* Main Stage Image with Zoom Preview & Touch Navigation */}
             <div
-              className="relative aspect-square w-full bg-white rounded-2xl border border-brand-gold/25 overflow-hidden shadow-luxury cursor-crosshair"
+              className="relative aspect-square w-full bg-white rounded-2xl border border-brand-gold/25 overflow-hidden shadow-luxury cursor-crosshair group"
               onMouseEnter={() => setIsZoomed(true)}
               onMouseLeave={() => setIsZoomed(false)}
               onMouseMove={handleMouseMove}
@@ -227,7 +228,8 @@ export const ProductDetailView: React.FC<ProductDetailViewProps> = ({
                 alt={product.name}
                 fill
                 priority
-                className={`object-contain p-6 transition-transform duration-200 ${
+                sizes="(max-width: 768px) 100vw, 50vw"
+                className={`object-contain p-4 sm:p-6 transition-transform duration-200 ${
                   isZoomed ? 'scale-150' : 'scale-100'
                 }`}
                 style={
@@ -240,14 +242,14 @@ export const ProductDetailView: React.FC<ProductDetailViewProps> = ({
               />
 
               {/* Floating Badges */}
-              <div className="absolute top-4 left-4 flex flex-col gap-1.5 z-10 pointer-events-none">
+              <div className="absolute top-3 left-3 sm:top-4 sm:left-4 flex flex-col gap-1.5 z-10 pointer-events-none">
                 {discountPercent > 0 && (
-                  <span className="bg-brand-forest text-brand-gold text-xs font-bold font-sans tracking-wider px-3 py-1 rounded shadow-sm">
+                  <span className="bg-brand-forest text-brand-gold text-[10px] sm:text-xs font-bold font-sans tracking-wider px-2.5 sm:px-3 py-1 rounded shadow-sm">
                     SAVE {discountPercent}%
                   </span>
                 )}
                 {product.isBestseller && (
-                  <span className="bg-brand-gold text-brand-forest text-xs font-bold font-sans tracking-wider px-3 py-1 rounded shadow-sm flex items-center gap-1">
+                  <span className="bg-brand-gold text-brand-forest text-[10px] sm:text-xs font-bold font-sans tracking-wider px-2.5 sm:px-3 py-1 rounded shadow-sm flex items-center gap-1">
                     <Sparkles className="w-3 h-3" /> BESTSELLER
                   </span>
                 )}
@@ -256,25 +258,58 @@ export const ProductDetailView: React.FC<ProductDetailViewProps> = ({
               {/* Floating Wishlist Button */}
               <button
                 onClick={() => toggleWishlist(product)}
-                className={`absolute top-4 right-4 p-3 rounded-full backdrop-blur-md transition-all shadow-md z-10 ${
+                className={`absolute top-3 right-3 sm:top-4 sm:right-4 p-2.5 sm:p-3 rounded-full backdrop-blur-md transition-all shadow-md z-10 ${
                   inWishlist
                     ? 'bg-rose-50 text-rose-600 border border-rose-200'
-                    : 'bg-white/80 text-brand-forest hover:bg-white hover:text-brand-gold border border-brand-gold/20'
+                    : 'bg-white/85 text-brand-forest hover:bg-white hover:text-brand-gold border border-brand-gold/20'
                 }`}
                 aria-label="Toggle Wishlist"
               >
-                <Heart className={`w-5 h-5 ${inWishlist ? 'fill-rose-600' : ''}`} />
+                <Heart className={`w-4 h-4 sm:w-5 sm:h-5 ${inWishlist ? 'fill-rose-600' : ''}`} />
               </button>
+
+              {/* Touch & Click Image Navigation Chevrons */}
+              {images.length > 1 && (
+                <>
+                  <button
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      setActiveImageIndex((prev) => (prev === 0 ? images.length - 1 : prev - 1));
+                    }}
+                    className="absolute left-2.5 sm:left-3 top-1/2 -translate-y-1/2 w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-white/90 text-brand-forest hover:bg-white shadow-md flex items-center justify-center transition-all z-10 active:scale-90"
+                    aria-label="Previous image"
+                  >
+                    <ChevronLeft className="w-4 h-4 sm:w-5 sm:h-5" />
+                  </button>
+                  <button
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      setActiveImageIndex((prev) => (prev === images.length - 1 ? 0 : prev + 1));
+                    }}
+                    className="absolute right-2.5 sm:right-3 top-1/2 -translate-y-1/2 w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-white/90 text-brand-forest hover:bg-white shadow-md flex items-center justify-center transition-all z-10 active:scale-90"
+                    aria-label="Next image"
+                  >
+                    <ChevronRight className="w-4 h-4 sm:w-5 sm:h-5" />
+                  </button>
+                </>
+              )}
+
+              {/* Mobile Image Counter Indicator */}
+              {images.length > 1 && (
+                <div className="absolute bottom-3 right-3 bg-brand-forest/80 text-brand-gold text-[10px] sm:text-xs font-sans font-medium px-2.5 py-0.5 rounded-full backdrop-blur-sm pointer-events-none z-10">
+                  {activeImageIndex + 1} / {images.length}
+                </div>
+              )}
             </div>
 
-            {/* Thumbnail Navigation */}
+            {/* Thumbnail Navigation with Touch Scrolling */}
             {images.length > 1 && (
-              <div className="flex gap-3 overflow-x-auto pb-2">
+              <div className="flex gap-2.5 sm:gap-3 overflow-x-auto pb-2 scrollbar-none snap-x">
                 {images.map((img, idx) => (
                   <button
                     key={idx}
                     onClick={() => setActiveImageIndex(idx)}
-                    className={`relative w-20 h-20 rounded-lg overflow-hidden bg-white border-2 transition-all shrink-0 ${
+                    className={`relative w-16 h-16 sm:w-20 sm:h-20 rounded-lg overflow-hidden bg-white border-2 transition-all shrink-0 snap-start active:scale-95 ${
                       activeImageIndex === idx
                         ? 'border-brand-gold shadow-md'
                         : 'border-brand-gold/20 hover:border-brand-gold/60 opacity-70 hover:opacity-100'
@@ -284,7 +319,7 @@ export const ProductDetailView: React.FC<ProductDetailViewProps> = ({
                       src={img}
                       alt={`${product.name} view ${idx + 1}`}
                       fill
-                      className="object-contain p-2"
+                      className="object-contain p-1.5 sm:p-2"
                     />
                   </button>
                 ))}
@@ -888,33 +923,36 @@ export const ProductDetailView: React.FC<ProductDetailViewProps> = ({
       </div>
 
       {/* =========================================================================
-          STICKY MOBILE ADD TO CART BAR (Section 6 Requirement)
+          STICKY MOBILE ADD TO CART BAR (Optimized for Android / Mobile Touch)
           ========================================================================= */}
-      <div className="fixed bottom-0 left-0 right-0 z-30 bg-white border-t border-brand-gold/30 p-3 sm:hidden shadow-2xl flex items-center justify-between gap-3 animate-slide-up">
-        <div>
-          <div className="font-serif text-xs font-bold text-brand-forest line-clamp-1">
+      <div className="fixed bottom-0 left-0 right-0 z-30 bg-white/95 backdrop-blur-md border-t border-brand-gold/30 px-4 py-3 pb-[calc(0.75rem+env(safe-area-inset-bottom,0px))] sm:hidden shadow-[0_-4px_20px_rgba(0,0,0,0.12)] flex items-center justify-between gap-3 animate-slide-up">
+        <div className="min-w-0 flex-1">
+          <div className="font-serif text-xs font-bold text-brand-forest truncate">
             {product.name}
           </div>
-          <div className="flex items-baseline gap-1 text-sm font-bold text-brand-forest">
-            ₹{product.price}
+          <div className="flex items-baseline gap-1.5 text-sm font-bold text-brand-forest">
+            <span>₹{product.price}</span>
             {product.mrp > product.price && (
               <span className="text-[10px] text-stone-400 line-through">
                 ₹{product.mrp}
               </span>
             )}
+            <span className="text-[10px] text-emerald-800 font-semibold ml-1">
+              • In Stock
+            </span>
           </div>
         </div>
 
-        <div className="flex gap-2">
+        <div className="flex items-center gap-2 shrink-0">
           <button
             onClick={handleAddToCart}
-            className="px-4 py-2 bg-brand-forest text-brand-ivory text-xs font-sans font-semibold tracking-wider rounded"
+            className="px-3.5 py-2.5 bg-brand-forest text-brand-ivory text-xs font-sans font-semibold tracking-wider rounded-lg active:scale-95 transition-transform shadow-sm"
           >
             ADD
           </button>
           <button
             onClick={handleBuyNow}
-            className="px-4 py-2 bg-brand-gold text-brand-forest text-xs font-sans font-bold tracking-wider rounded"
+            className="px-4 py-2.5 bg-brand-gold text-brand-forest text-xs font-sans font-bold tracking-wider rounded-lg active:scale-95 transition-transform shadow-gold"
           >
             BUY NOW
           </button>

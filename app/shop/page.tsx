@@ -444,8 +444,8 @@ function ShopContent() {
             className="fixed inset-0 bg-black/60 backdrop-blur-sm"
             onClick={() => setIsMobileFiltersOpen(false)}
           />
-          <div className="fixed inset-y-0 right-0 max-w-full flex pl-10">
-            <div className="w-screen max-w-sm bg-brand-ivory shadow-2xl p-6 flex flex-col justify-between overflow-y-auto">
+          <div className="fixed inset-y-0 right-0 max-w-full flex pl-0 sm:pl-10">
+            <div className="w-screen max-w-sm bg-brand-ivory shadow-2xl p-6 pb-[calc(1.5rem+env(safe-area-inset-bottom,0px))] flex flex-col justify-between overflow-y-auto">
               <div className="space-y-6">
                 <div className="flex items-center justify-between border-b border-brand-gold/20 pb-4">
                   <h3 className="font-serif text-xl font-bold text-brand-forest">

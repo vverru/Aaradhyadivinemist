@@ -47,6 +47,7 @@ export async function POST(req: NextRequest) {
         quantity: qty,
         image: product.images[0] || '/images/products/sandalwood.png',
         subtotal: itemSubtotal,
+        slug: product.slug,
       });
     }
 

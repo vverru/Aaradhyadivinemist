@@ -288,9 +288,12 @@ function TrackOrderContent() {
               <div className="space-y-2">
                 {order.items.map((item, idx) => (
                   <div key={idx} className="flex justify-between items-center text-xs font-sans text-stone-700">
-                    <span>
+                    <Link
+                      href={item.slug ? `/shop/${item.slug}` : '/shop'}
+                      className="hover:text-brand-gold hover:underline transition-colors font-medium text-brand-forest"
+                    >
                       {item.productName} ({item.packSize}) × {item.quantity}
-                    </span>
+                    </Link>
                     <span className="font-semibold text-brand-forest">₹{item.subtotal}</span>
                   </div>
                 ))}

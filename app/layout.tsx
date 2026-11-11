@@ -1,10 +1,17 @@
-import type { Metadata } from 'next';
+import type { Metadata, Viewport } from 'next';
 import './globals.css';
 import { ToastProvider } from '@/components/context/ToastContext';
 import { CartProvider } from '@/components/context/CartContext';
 import { WishlistProvider } from '@/components/context/WishlistContext';
 import { AuthProvider } from '@/components/context/AuthContext';
 import { StoreLayout } from '@/components/layout/StoreLayout';
+
+export const viewport: Viewport = {
+  width: 'device-width',
+  initialScale: 1,
+  maximumScale: 5,
+  themeColor: '#183B2C',
+};
 
 export const metadata: Metadata = {
   title: 'AARADHYA DIVINE MIST | Premium Agarbatti, Incense Sticks & Pooja Essentials',

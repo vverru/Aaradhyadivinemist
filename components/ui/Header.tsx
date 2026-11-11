@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
-import { usePathname } from 'next/navigation';
+import { usePathname, useRouter } from 'next/navigation';
 import {
   Search,
   User,
@@ -24,6 +24,7 @@ export const Header: React.FC = () => {
   const [isSearchOpen, setIsSearchOpen] = useState(false);
   const [searchQuery, setSearchQuery] = useState('');
   const pathname = usePathname();
+  const router = useRouter();
   const { itemCount, openCartDrawer } = useCart();
   const { wishlistIds } = useWishlist();
 
@@ -220,14 +221,16 @@ export const Header: React.FC = () => {
                 autoFocus
                 onKeyDown={(e) => {
                   if (e.key === 'Enter' && searchQuery.trim()) {
-                    window.location.href = `/shop?search=${encodeURIComponent(searchQuery.trim())}`;
+                    setIsSearchOpen(false);
+                    router.push(`/shop?search=${encodeURIComponent(searchQuery.trim())}`);
                   }
                 }}
               />
               <button
                 onClick={() => {
                   if (searchQuery.trim()) {
-                    window.location.href = `/shop?search=${encodeURIComponent(searchQuery.trim())}`;
+                    setIsSearchOpen(false);
+                    router.push(`/shop?search=${encodeURIComponent(searchQuery.trim())}`);
                   }
                 }}
                 className="bg-brand-forest text-brand-ivory px-4 py-2 rounded text-xs font-sans tracking-widest hover:bg-brand-forest-light transition-colors"
@@ -276,7 +279,8 @@ export const Header: React.FC = () => {
                   onSubmit={(e) => {
                     e.preventDefault();
                     if (searchQuery.trim()) {
-                      window.location.href = `/shop?search=${encodeURIComponent(searchQuery.trim())}`;
+                      setIsMobileMenuOpen(false);
+                      router.push(`/shop?search=${encodeURIComponent(searchQuery.trim())}`);
                     }
                   }}
                   className="relative"
@@ -322,7 +326,7 @@ export const Header: React.FC = () => {
             </div>
 
             {/* Drawer Footer */}
-            <div className="p-6 bg-brand-forest text-brand-ivory text-xs space-y-2">
+            <div className="p-6 pb-[calc(1.5rem+env(safe-area-inset-bottom,0px))] bg-brand-forest text-brand-ivory text-xs space-y-2">
               <p className="font-serif italic text-brand-gold text-sm">
                 &ldquo;Way to connect your Aaradhya&rdquo;
               </p>

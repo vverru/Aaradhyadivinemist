@@ -379,11 +379,19 @@ function AccountContent() {
                         {ord.items.map((i, idx) => (
                           <div key={idx} className="py-2.5 flex items-center justify-between text-xs font-sans">
                             <div className="flex items-center gap-3">
-                              <div className="relative w-10 h-10 rounded bg-brand-ivory overflow-hidden shrink-0 border border-brand-gold/15">
+                              <Link
+                                href={i.slug ? `/shop/${i.slug}` : '/shop'}
+                                className="relative w-10 h-10 rounded bg-brand-ivory overflow-hidden shrink-0 border border-brand-gold/15 block hover:opacity-85 transition-opacity"
+                              >
                                 <Image src={i.image} alt={i.productName} fill className="object-cover" />
-                              </div>
+                              </Link>
                               <div>
-                                <p className="font-bold text-brand-forest">{i.productName}</p>
+                                <Link
+                                  href={i.slug ? `/shop/${i.slug}` : '/shop'}
+                                  className="font-bold text-brand-forest hover:text-brand-gold hover:underline transition-colors block"
+                                >
+                                  {i.productName}
+                                </Link>
                                 <p className="text-[11px] text-stone-500">{i.packSize} • Qty: {i.quantity}</p>
                               </div>
                             </div>
@@ -470,9 +478,9 @@ function AccountContent() {
                         key={p.id}
                         className="bg-white rounded-xl border border-brand-gold/20 p-4 flex gap-4 items-center shadow-sm"
                       >
-                        <div className="relative w-20 h-20 rounded bg-brand-ivory shrink-0 overflow-hidden border border-brand-gold/15">
+                        <Link href={`/shop/${p.slug}`} className="relative w-20 h-20 rounded bg-brand-ivory shrink-0 overflow-hidden border border-brand-gold/15 block hover:opacity-85 transition-opacity">
                           <Image src={p.images[0] || '/images/products/sandalwood.png'} alt={p.name} fill className="object-cover" />
-                        </div>
+                        </Link>
 
                         <div className="flex-1">
                           <Link href={`/shop/${p.slug}`} className="font-serif font-bold text-brand-forest text-sm line-clamp-1 hover:text-brand-gold">
