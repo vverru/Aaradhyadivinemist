@@ -316,7 +316,7 @@ const APP_DATA = {
 // Application State Management
 class AppState {
   constructor() {
-    this.products = [...APP_DATA.products];
+    this.products = this.loadFromStorage('adm_products', APP_DATA.products);
     this.categories = [...APP_DATA.categories];
     this.reviews = this.loadFromStorage('adm_reviews', APP_DATA.reviews);
     this.cart = this.loadFromStorage('adm_cart', []);

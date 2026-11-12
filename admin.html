@@ -1,0 +1,2388 @@
+<!DOCTYPE html>
+<html lang="hi" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <title>Admin Sanctuary Suite | Aaradhya Divine Mist</title>
+  
+  <!-- SEO & Favicon -->
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="theme-color" content="#183B2C">
+  <link rel="icon" type="image/svg+xml" href="images/logo/logo.svg">
+
+  <!-- Google Fonts & Font Awesome 6 Icons -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <style>
+    :root {
+      --forest-900: #0f261c;
+      --forest-800: #183b2c;
+      --forest-700: #204c3a;
+      --forest-600: #2c634c;
+      --sage-100: #dde8d5;
+      --sage-200: #c9dbbe;
+      --sage-50: #f2f7ef;
+      --ivory-50: #fdfcf9;
+      --ivory-100: #f8f6ed;
+      --ivory-200: #f0ebd9;
+      --gold-500: #c6a66a;
+      --gold-600: #b39152;
+      --gold-700: #93743a;
+      --charcoal: #1c211e;
+      --text-muted: #5c6660;
+      --text-light: #8e9992;
+      --border-light: rgba(24, 59, 44, 0.12);
+      --border-gold: rgba(198, 166, 106, 0.35);
+      --font-serif: 'Playfair Display', Georgia, serif;
+      --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      --radius-sm: 6px;
+      --radius-md: 10px;
+      --radius-lg: 16px;
+      --shadow-sm: 0 2px 8px rgba(24, 59, 44, 0.06);
+      --shadow-md: 0 6px 20px rgba(24, 59, 44, 0.08);
+      --shadow-lg: 0 16px 36px rgba(24, 59, 44, 0.14);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: var(--font-sans);
+      background-color: var(--ivory-100);
+      color: var(--charcoal);
+      line-height: 1.5;
+      -webkit-font-smoothing: antialiased;
+      min-height: 100vh;
+    }
+
+    /* ==========================================================================
+       LOGIN VIEW
+       ========================================================================== */
+    .login-wrapper {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(135deg, var(--forest-900) 0%, var(--forest-800) 100%);
+      padding: 1.5rem;
+    }
+
+    .login-card {
+      background: var(--ivory-100);
+      width: 100%;
+      max-width: 440px;
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--border-gold);
+      box-shadow: 0 20px 45px rgba(0, 0, 0, 0.35);
+      padding: 2.25rem 2rem;
+      text-align: center;
+    }
+
+    .brand-emblem-lg {
+      width: 58px;
+      height: 58px;
+      background: var(--forest-800);
+      color: var(--gold-500);
+      border: 2px solid var(--gold-500);
+      border-radius: 50%;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.6rem;
+      margin-bottom: 0.75rem;
+      box-shadow: 0 6px 16px rgba(0,0,0,0.15);
+    }
+
+    .login-title {
+      font-family: var(--font-serif);
+      font-size: 1.6rem;
+      color: var(--forest-800);
+      font-weight: 700;
+    }
+
+    .login-subtitle {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      margin-top: 0.25rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .demo-credentials-box {
+      background: var(--sage-50);
+      border: 1px dashed var(--gold-600);
+      border-radius: var(--radius-sm);
+      padding: 0.75rem 1rem;
+      font-size: 0.78rem;
+      text-align: left;
+      margin-bottom: 1.25rem;
+      color: var(--forest-800);
+    }
+
+    .demo-credentials-box code {
+      font-family: monospace;
+      font-weight: 700;
+      color: var(--forest-900);
+      background: #e2ecd9;
+      padding: 2px 5px;
+      border-radius: 3px;
+    }
+
+    .form-group {
+      text-align: left;
+      margin-bottom: 1rem;
+    }
+
+    .form-group label {
+      display: block;
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: var(--forest-800);
+      margin-bottom: 0.35rem;
+    }
+
+    .input-icon-wrap {
+      position: relative;
+    }
+
+    .input-icon-wrap i {
+      position: absolute;
+      left: 12px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: var(--text-light);
+      font-size: 0.9rem;
+    }
+
+    .input-icon-wrap input,
+    .input-icon-wrap select,
+    .form-input {
+      width: 100%;
+      padding: 0.7rem 0.85rem 0.7rem 2.25rem;
+      border: 1px solid rgba(24, 59, 44, 0.2);
+      border-radius: var(--radius-sm);
+      background: #ffffff;
+      font-family: var(--font-sans);
+      font-size: 0.88rem;
+      color: var(--forest-900);
+      outline: none;
+      transition: border-color 0.2s;
+    }
+
+    .input-icon-wrap input:focus,
+    .form-input:focus {
+      border-color: var(--gold-600);
+      box-shadow: 0 0 0 3px rgba(198, 166, 106, 0.15);
+    }
+
+    .btn-admin {
+      width: 100%;
+      padding: 0.75rem 1.25rem;
+      background: var(--forest-800);
+      color: var(--gold-500);
+      border: 1px solid var(--gold-500);
+      border-radius: var(--radius-sm);
+      font-family: var(--font-sans);
+      font-size: 0.92rem;
+      font-weight: 600;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      transition: all 0.25s ease;
+      margin-top: 0.5rem;
+    }
+
+    .btn-admin:hover {
+      background: var(--forest-900);
+      color: #ffffff;
+      border-color: var(--gold-600);
+    }
+
+    .btn-gold {
+      background: var(--gold-500);
+      color: var(--forest-900);
+      border: none;
+      font-weight: 700;
+    }
+
+    .btn-gold:hover {
+      background: var(--gold-600);
+      color: #ffffff;
+    }
+
+    /* ==========================================================================
+       ADMIN APP LAYOUT (Sidebar + Main Content)
+       ========================================================================== */
+    .admin-app {
+      display: flex;
+      min-height: 100vh;
+    }
+
+    /* Sidebar */
+    .admin-sidebar {
+      width: 260px;
+      background: var(--forest-800);
+      color: var(--ivory-100);
+      display: flex;
+      flex-direction: column;
+      border-right: 1px solid rgba(198, 166, 106, 0.25);
+      position: sticky;
+      top: 0;
+      height: 100vh;
+      overflow-y: auto;
+      z-index: 50;
+      transition: transform 0.3s ease;
+    }
+
+    .sidebar-header {
+      padding: 1.5rem 1.25rem 1.25rem;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    .sidebar-brand-name {
+      font-family: var(--font-serif);
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: var(--gold-500);
+      letter-spacing: 0.04em;
+      line-height: 1.1;
+    }
+
+    .sidebar-brand-sub {
+      font-size: 0.68rem;
+      color: var(--sage-100);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .sidebar-nav {
+      padding: 1rem 0.75rem;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 0.25rem;
+    }
+
+    .nav-item {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      padding: 0.65rem 0.85rem;
+      color: var(--sage-100);
+      text-decoration: none;
+      font-size: 0.85rem;
+      font-weight: 500;
+      border-radius: var(--radius-sm);
+      transition: all 0.2s;
+      cursor: pointer;
+    }
+
+    .nav-item i {
+      width: 18px;
+      text-align: center;
+      font-size: 0.95rem;
+      color: var(--gold-500);
+    }
+
+    .nav-item:hover {
+      background: rgba(255, 255, 255, 0.08);
+      color: #ffffff;
+    }
+
+    .nav-item.active {
+      background: var(--gold-500);
+      color: var(--forest-900);
+      font-weight: 700;
+    }
+
+    .nav-item.active i {
+      color: var(--forest-900);
+    }
+
+    .nav-badge {
+      margin-left: auto;
+      background: rgba(255, 255, 255, 0.2);
+      font-size: 0.68rem;
+      font-weight: 700;
+      padding: 2px 6px;
+      border-radius: 999px;
+      color: #fff;
+    }
+
+    .nav-item.active .nav-badge {
+      background: var(--forest-800);
+      color: var(--gold-500);
+    }
+
+    .sidebar-footer {
+      padding: 1rem 1.25rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+      font-size: 0.8rem;
+    }
+
+    .sidebar-link {
+      color: var(--sage-100);
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.4rem 0;
+      transition: color 0.2s;
+    }
+
+    .sidebar-link:hover {
+      color: #ffffff;
+    }
+
+    /* Main Area */
+    .admin-main {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      min-width: 0;
+      background: var(--ivory-100);
+    }
+
+    /* Top Bar */
+    .admin-topbar {
+      background: #ffffff;
+      border-bottom: 1px solid var(--border-light);
+      padding: 0.75rem 1.75rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      position: sticky;
+      top: 0;
+      z-index: 40;
+    }
+
+    .topbar-left {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .mobile-menu-btn {
+      display: none;
+      background: none;
+      border: none;
+      font-size: 1.2rem;
+      color: var(--forest-800);
+      cursor: pointer;
+    }
+
+    .page-heading {
+      font-family: var(--font-serif);
+      font-size: 1.35rem;
+      color: var(--forest-800);
+      font-weight: 700;
+    }
+
+    .topbar-right {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .admin-user-pill {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      background: var(--sage-50);
+      padding: 0.35rem 0.75rem;
+      border-radius: 999px;
+      border: 1px solid var(--border-light);
+    }
+
+    .user-avatar-sm {
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      background: var(--forest-800);
+      color: var(--gold-500);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.75rem;
+      font-weight: 700;
+    }
+
+    .user-name-role {
+      line-height: 1.2;
+    }
+
+    .user-name {
+      font-size: 0.8rem;
+      font-weight: 700;
+      color: var(--forest-800);
+    }
+
+    .user-role-badge {
+      font-size: 0.65rem;
+      color: var(--gold-700);
+      text-transform: uppercase;
+      font-weight: 600;
+    }
+
+    /* Content Area */
+    .admin-content {
+      padding: 1.75rem;
+      flex: 1;
+      max-width: 1300px;
+      width: 100%;
+      margin: 0 auto;
+    }
+
+    .admin-tab-pane {
+      display: none;
+    }
+
+    .admin-tab-pane.active {
+      display: block;
+      animation: fadeIn 0.25s ease;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(4px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Stat Cards */
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1.25rem;
+      margin-bottom: 1.75rem;
+    }
+
+    .stat-card {
+      background: #ffffff;
+      border-radius: var(--radius-md);
+      border: 1px solid var(--border-light);
+      padding: 1.25rem;
+      box-shadow: var(--shadow-sm);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+
+    .stat-info h4 {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+    }
+
+    .stat-value {
+      font-family: var(--font-serif);
+      font-size: 1.6rem;
+      font-weight: 700;
+      color: var(--forest-800);
+      margin-top: 0.2rem;
+    }
+
+    .stat-sub {
+      font-size: 0.72rem;
+      color: #15803d;
+      margin-top: 0.15rem;
+      display: flex;
+      align-items: center;
+      gap: 0.25rem;
+    }
+
+    .stat-icon {
+      width: 48px;
+      height: 48px;
+      border-radius: var(--radius-sm);
+      background: var(--sage-50);
+      color: var(--forest-800);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.3rem;
+      flex-shrink: 0;
+    }
+
+    .stat-icon.gold {
+      background: #fdf8eb;
+      color: var(--gold-600);
+    }
+
+    /* Table Container */
+    .card-panel {
+      background: #ffffff;
+      border-radius: var(--radius-md);
+      border: 1px solid var(--border-light);
+      box-shadow: var(--shadow-sm);
+      overflow: hidden;
+      margin-bottom: 1.75rem;
+    }
+
+    .card-panel-header {
+      padding: 1.25rem 1.5rem;
+      border-bottom: 1px solid var(--border-light);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    .card-panel-title {
+      font-family: var(--font-serif);
+      font-size: 1.15rem;
+      color: var(--forest-800);
+      font-weight: 700;
+    }
+
+    .card-panel-desc {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      margin-top: 0.15rem;
+    }
+
+    .table-responsive {
+      overflow-x: auto;
+      width: 100%;
+    }
+
+    .admin-table {
+      width: 100%;
+      border-collapse: collapse;
+      text-align: left;
+      font-size: 0.82rem;
+    }
+
+    .admin-table th {
+      background: var(--sage-50);
+      padding: 0.75rem 1.25rem;
+      font-weight: 600;
+      color: var(--forest-800);
+      border-bottom: 1px solid var(--border-light);
+      white-space: nowrap;
+    }
+
+    .admin-table td {
+      padding: 0.85rem 1.25rem;
+      border-bottom: 1px solid rgba(24, 59, 44, 0.06);
+      vertical-align: middle;
+    }
+
+    .admin-table tr:hover td {
+      background-color: #fafbf9;
+    }
+
+    /* Status Pills */
+    .status-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      padding: 0.2rem 0.65rem;
+      border-radius: 999px;
+      font-size: 0.72rem;
+      font-weight: 600;
+      text-transform: capitalize;
+    }
+
+    .status-pill.success {
+      background: #dcfce7;
+      color: #15803d;
+    }
+
+    .status-pill.warning {
+      background: #fef9c3;
+      color: #854d0e;
+    }
+
+    .status-pill.info {
+      background: #e0f2fe;
+      color: #0369a1;
+    }
+
+    .status-pill.danger {
+      background: #fee2e2;
+      color: #b91c1c;
+    }
+
+    .status-pill.gold {
+      background: #fbf5e6;
+      color: #926f2a;
+      border: 1px solid rgba(198, 166, 106, 0.4);
+    }
+
+    /* Action Buttons in Tables */
+    .action-icon-btn {
+      background: none;
+      border: 1px solid var(--border-light);
+      width: 30px;
+      height: 30px;
+      border-radius: var(--radius-sm);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--forest-800);
+      cursor: pointer;
+      font-size: 0.78rem;
+      transition: all 0.2s;
+    }
+
+    .action-icon-btn:hover {
+      background: var(--sage-100);
+      border-color: var(--forest-800);
+    }
+
+    .action-icon-btn.delete:hover {
+      background: #fee2e2;
+      color: #b91c1c;
+      border-color: #b91c1c;
+    }
+
+    /* Modals */
+    .modal-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(15, 38, 28, 0.65);
+      backdrop-filter: blur(4px);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 1.5rem;
+      z-index: 1000;
+      opacity: 0;
+      visibility: hidden;
+      transition: all 0.25s ease;
+    }
+
+    .modal-overlay.active {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .modal-card {
+      background: #ffffff;
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--border-gold);
+      box-shadow: var(--shadow-lg);
+      width: 100%;
+      max-width: 580px;
+      max-height: 90vh;
+      overflow-y: auto;
+      padding: 2rem;
+      position: relative;
+    }
+
+    .modal-header {
+      margin-bottom: 1.25rem;
+      padding-bottom: 0.75rem;
+      border-bottom: 1px solid var(--border-light);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .modal-title {
+      font-family: var(--font-serif);
+      font-size: 1.35rem;
+      color: var(--forest-800);
+      font-weight: 700;
+    }
+
+    .modal-close {
+      background: none;
+      border: none;
+      font-size: 1.2rem;
+      color: var(--text-muted);
+      cursor: pointer;
+    }
+
+    .form-grid-2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+    }
+
+    /* Toast Notification */
+    .toast-container {
+      position: fixed;
+      bottom: 24px;
+      right: 24px;
+      z-index: 9999;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+      pointer-events: none;
+    }
+
+    .toast-box {
+      background: var(--forest-800);
+      color: #ffffff;
+      padding: 0.85rem 1.25rem;
+      border-radius: var(--radius-sm);
+      border-left: 4px solid var(--gold-500);
+      box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+      font-size: 0.85rem;
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      min-width: 280px;
+      max-width: 380px;
+      animation: slideIn 0.3s ease;
+    }
+
+    @keyframes slideIn {
+      from { transform: translateX(100%); opacity: 0; }
+      to { transform: translateX(0); opacity: 1; }
+    }
+
+    /* Responsive */
+    @media (max-width: 992px) {
+      .admin-sidebar {
+        position: fixed;
+        left: 0;
+        top: 0;
+        bottom: 0;
+        transform: translateX(-100%);
+      }
+      .admin-sidebar.open {
+        transform: translateX(0);
+      }
+      .mobile-menu-btn {
+        display: block;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .form-grid-2 {
+        grid-template-columns: 1fr;
+      }
+      .admin-content {
+        padding: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- =========================================================================
+       1. LOGIN VIEW (Shown when not authenticated)
+       ========================================================================= -->
+  <div id="login-view" class="login-wrapper">
+    <div class="login-card">
+      <div class="brand-emblem-lg">
+        <i class="fa-solid fa-om"></i>
+      </div>
+      <h2 class="login-title">Aaradhya Divine Mist</h2>
+      <p class="login-subtitle">Administrator Sanctuary Portal &amp; Operations</p>
+
+      <!-- Pre-filled Credentials Helper -->
+      <div class="demo-credentials-box">
+        <div><strong><i class="fa-solid fa-key" style="color:var(--gold-600); margin-right:4px;"></i> Default Admin Credentials:</strong></div>
+        <div style="margin-top:4px;">Email: <code>admin@aaradhyadivinemist.com</code></div>
+        <div style="margin-top:2px;">Password: <code>AaradhyaDivine2026!</code></div>
+      </div>
+
+      <form id="admin-login-form">
+        <div class="form-group">
+          <label for="admin-email-input">Administrator Email</label>
+          <div class="input-icon-wrap">
+            <i class="fa-solid fa-envelope"></i>
+            <input type="email" id="admin-email-input" required value="admin@aaradhyadivinemist.com" placeholder="admin@aaradhyadivinemist.com">
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="admin-password-input">Security Password</label>
+          <div class="input-icon-wrap">
+            <i class="fa-solid fa-lock"></i>
+            <input type="password" id="admin-password-input" required value="AaradhyaDivine2026!" placeholder="••••••••••••">
+          </div>
+        </div>
+
+        <button type="submit" class="btn-admin btn-gold">
+          <i class="fa-solid fa-shield-halved"></i>
+          <span>Enter Sanctuary Suite</span>
+        </button>
+      </form>
+
+      <div style="margin-top: 1.25rem;">
+        <a href="index.html" style="font-size: 0.78rem; color: var(--forest-800); text-decoration: none;">
+          <i class="fa-solid fa-arrow-left"></i> Return to Live Devotee Storefront
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- =========================================================================
+       2. ADMIN MAIN SUITE (Shown when logged in)
+       ========================================================================= -->
+  <div id="admin-suite-view" class="admin-app" style="display:none;">
+    
+    <!-- Sidebar -->
+    <aside class="admin-sidebar" id="admin-sidebar">
+      <div class="sidebar-header">
+        <div style="width:36px; height:36px; background:var(--gold-500); color:var(--forest-900); border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:1.1rem; font-weight:bold;">
+          <i class="fa-solid fa-om"></i>
+        </div>
+        <div>
+          <div class="sidebar-brand-name">Aaradhya</div>
+          <div class="sidebar-brand-sub">Sanctuary Portal</div>
+        </div>
+      </div>
+
+      <nav class="sidebar-nav">
+        <a class="nav-item active" data-tab="tab-overview">
+          <i class="fa-solid fa-chart-pie"></i>
+          <span>Dashboard Overview</span>
+        </a>
+        <a class="nav-item" data-tab="tab-admins">
+          <i class="fa-solid fa-user-shield"></i>
+          <span>Admins &amp; Staff</span>
+          <span class="nav-badge" id="badge-admin-count">1</span>
+        </a>
+        <a class="nav-item" data-tab="tab-products">
+          <i class="fa-solid fa-box-open"></i>
+          <span>Products Catalog</span>
+          <span class="nav-badge" id="badge-product-count">6</span>
+        </a>
+        <a class="nav-item" data-tab="tab-orders">
+          <i class="fa-solid fa-truck-fast"></i>
+          <span>Orders &amp; Logistics</span>
+          <span class="nav-badge" id="badge-order-count">2</span>
+        </a>
+        <a class="nav-item" data-tab="tab-inventory">
+          <i class="fa-solid fa-warehouse"></i>
+          <span>Inventory Ledger</span>
+        </a>
+        <a class="nav-item" data-tab="tab-coupons">
+          <i class="fa-solid fa-tag"></i>
+          <span>Coupons &amp; Offers</span>
+        </a>
+        <a class="nav-item" data-tab="tab-reviews">
+          <i class="fa-solid fa-star"></i>
+          <span>Devotee Reviews</span>
+        </a>
+        <a class="nav-item" data-tab="tab-settings">
+          <i class="fa-solid fa-sliders"></i>
+          <span>Store Settings</span>
+        </a>
+      </nav>
+
+      <div class="sidebar-footer">
+        <a href="index.html" target="_blank" class="sidebar-link">
+          <i class="fa-solid fa-arrow-up-right-from-square" style="color:var(--gold-500);"></i>
+          <span>Open Live Storefront</span>
+        </a>
+        <a href="javascript:void(0)" onclick="handleLogout()" class="sidebar-link" style="color:#fca5a5;">
+          <i class="fa-solid fa-right-from-bracket"></i>
+          <span>Sign Out</span>
+        </a>
+      </div>
+    </aside>
+
+    <!-- Main Content Panel -->
+    <div class="admin-main">
+      
+      <!-- Top Bar -->
+      <header class="admin-topbar">
+        <div class="topbar-left">
+          <button class="mobile-menu-btn" onclick="toggleSidebar()">
+            <i class="fa-solid fa-bars"></i>
+          </button>
+          <h1 class="page-heading" id="topbar-title">Dashboard Overview</h1>
+        </div>
+
+        <div class="topbar-right">
+          <div class="admin-user-pill">
+            <div class="user-avatar-sm" id="topbar-avatar">A</div>
+            <div class="user-name-role">
+              <div class="user-name" id="topbar-user-name">Super Admin</div>
+              <div class="user-role-badge" id="topbar-user-role">Super Admin</div>
+            </div>
+          </div>
+          <button onclick="handleLogout()" class="action-icon-btn" title="Sign Out">
+            <i class="fa-solid fa-right-from-bracket"></i>
+          </button>
+        </div>
+      </header>
+
+      <!-- Content Views -->
+      <main class="admin-content">
+
+        <!-- ===================================================================
+             TAB 1: DASHBOARD OVERVIEW
+             =================================================================== -->
+        <div id="tab-overview" class="admin-tab-pane active">
+          <!-- Stat Cards -->
+          <div class="stats-grid">
+            <div class="stat-card">
+              <div class="stat-info">
+                <h4>Total Sales Revenue</h4>
+                <div class="stat-value" id="stat-revenue">₹2,848</div>
+                <div class="stat-sub"><i class="fa-solid fa-arrow-trend-up"></i> Verified Orders</div>
+              </div>
+              <div class="stat-icon gold">
+                <i class="fa-solid fa-indian-rupee-sign"></i>
+              </div>
+            </div>
+
+            <div class="stat-card">
+              <div class="stat-info">
+                <h4>Devotee Orders</h4>
+                <div class="stat-value" id="stat-orders-count">2</div>
+                <div class="stat-sub" style="color:var(--forest-700);"><i class="fa-solid fa-box"></i> Active Dispatch</div>
+              </div>
+              <div class="stat-icon">
+                <i class="fa-solid fa-cart-shopping"></i>
+              </div>
+            </div>
+
+            <div class="stat-card">
+              <div class="stat-info">
+                <h4>Sacred Products</h4>
+                <div class="stat-value" id="stat-products-count">6</div>
+                <div class="stat-sub"><i class="fa-solid fa-check"></i> 100% In Stock</div>
+              </div>
+              <div class="stat-icon">
+                <i class="fa-solid fa-spray-can-sparkles"></i>
+              </div>
+            </div>
+
+            <div class="stat-card">
+              <div class="stat-info">
+                <h4>System Admins</h4>
+                <div class="stat-value" id="stat-admins-count">1</div>
+                <div class="stat-sub"><i class="fa-solid fa-shield-halved"></i> Active Staff</div>
+              </div>
+              <div class="stat-icon gold">
+                <i class="fa-solid fa-user-shield"></i>
+              </div>
+            </div>
+          </div>
+
+          <!-- Quick Action Buttons -->
+          <div style="display:flex; gap:0.75rem; flex-wrap:wrap; margin-bottom:1.75rem;">
+            <button class="btn-admin btn-gold" style="width:auto; padding:0.6rem 1rem;" onclick="openAddAdminModal()">
+              <i class="fa-solid fa-user-plus"></i> + Add New Admin
+            </button>
+            <button class="btn-admin" style="width:auto; padding:0.6rem 1rem;" onclick="openAddProductModal()">
+              <i class="fa-solid fa-plus"></i> + Add Sacred Product
+            </button>
+            <button class="btn-admin" style="width:auto; padding:0.6rem 1rem;" onclick="switchTab('tab-orders')">
+              <i class="fa-solid fa-truck-ramp-box"></i> View All Orders
+            </button>
+          </div>
+
+          <!-- Recent Orders in Dashboard -->
+          <div class="card-panel">
+            <div class="card-panel-header">
+              <div>
+                <h3 class="card-panel-title">Recent Devotee Dispatches</h3>
+                <p class="card-panel-desc">Real-time orders ready for packing and blue-dart pickup</p>
+              </div>
+              <button class="btn-admin" style="width:auto; padding:0.4rem 0.85rem; font-size:0.78rem;" onclick="switchTab('tab-orders')">
+                View Full Logistics →
+              </button>
+            </div>
+            <div class="table-responsive">
+              <table class="admin-table">
+                <thead>
+                  <tr>
+                    <th>Order ID</th>
+                    <th>Devotee Customer</th>
+                    <th>Date</th>
+                    <th>Sacred Offerings</th>
+                    <th>Amount</th>
+                    <th>Logistics Status</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody id="overview-orders-tbody">
+                  <!-- Rendered by JS -->
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+
+        <!-- ===================================================================
+             TAB 2: ADMINS & STAFF (Direct answer to "admin kaise add kare")
+             =================================================================== -->
+        <div id="tab-admins" class="admin-tab-pane">
+          <div class="card-panel">
+            <div class="card-panel-header">
+              <div>
+                <h3 class="card-panel-title">Authorized Administrators &amp; Staff</h3>
+                <p class="card-panel-desc">Manage sanctuary portal access credentials, roles, and administrative privileges</p>
+              </div>
+              <button class="btn-admin btn-gold" style="width:auto; padding:0.6rem 1.1rem;" onclick="openAddAdminModal()">
+                <i class="fa-solid fa-user-plus"></i> Add New Admin
+              </button>
+            </div>
+
+            <!-- Explanatory Guide Box -->
+            <div style="background:var(--sage-50); border-left:4px solid var(--forest-800); padding:1rem 1.25rem; margin:1rem 1.25rem; font-size:0.82rem; border-radius:var(--radius-sm); color:var(--forest-800);">
+              <strong><i class="fa-solid fa-circle-info"></i> How Admin Access Works:</strong>
+              <p style="margin-top:0.25rem;">
+                Aap yahan se naye Admins add kar sakte hain. Naya admin judte hi wo apne Email aur Password se <code>admin.html</code> portal me login kar sakta hai.
+              </p>
+            </div>
+
+            <div class="table-responsive">
+              <table class="admin-table">
+                <thead>
+                  <tr>
+                    <th>Administrator</th>
+                    <th>Email Address</th>
+                    <th>Assigned Role</th>
+                    <th>Account Status</th>
+                    <th>Added Date</th>
+                    <th>Actions</th>
+                  </tr>
+                </thead>
+                <tbody id="admins-table-tbody">
+                  <!-- Rendered by JS -->
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+
+        <!-- ===================================================================
+             TAB 3: PRODUCTS CATALOG
+             =================================================================== -->
+        <div id="tab-products" class="admin-tab-pane">
+          <div class="card-panel">
+            <div class="card-panel-header">
+              <div>
+                <h3 class="card-panel-title">Sacred Products Inventory</h3>
+                <p class="card-panel-desc">Manage 100% charcoal-free agarbatti, sandalwood, and dhoop catalog</p>
+              </div>
+              <button class="btn-admin btn-gold" style="width:auto; padding:0.6rem 1.1rem;" onclick="openAddProductModal()">
+                <i class="fa-solid fa-plus"></i> + Add Sacred Product
+              </button>
+            </div>
+            <div class="table-responsive">
+              <table class="admin-table">
+                <thead>
+                  <tr>
+                    <th>Product</th>
+                    <th>Category</th>
+                    <th>Price</th>
+                    <th>MRP</th>
+                    <th>Current Stock</th>
+                    <th>Catalog Status</th>
+                    <th>Actions</th>
+                  </tr>
+                </thead>
+                <tbody id="products-table-tbody">
+                  <!-- Rendered by JS -->
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+
+        <!-- ===================================================================
+             TAB 4: ORDERS & LOGISTICS
+             =================================================================== -->
+        <div id="tab-orders" class="admin-tab-pane">
+          <div class="card-panel">
+            <div class="card-panel-header">
+              <div>
+                <h3 class="card-panel-title">Orders Logistics &amp; Courier Tracking</h3>
+                <p class="card-panel-desc">Update Blue Dart / Delhivery AWB numbers and sacred dispatch states</p>
+              </div>
+            </div>
+            <div class="table-responsive">
+              <table class="admin-table">
+                <thead>
+                  <tr>
+                    <th>Order No.</th>
+                    <th>Devotee Name</th>
+                    <th>Date</th>
+                    <th>Items</th>
+                    <th>Total</th>
+                    <th>Courier &amp; AWB</th>
+                    <th>Status</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody id="orders-table-tbody">
+                  <!-- Rendered by JS -->
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+
+        <!-- ===================================================================
+             TAB 5: INVENTORY LEDGER
+             =================================================================== -->
+        <div id="tab-inventory" class="admin-tab-pane">
+          <div class="card-panel">
+            <div class="card-panel-header">
+              <div>
+                <h3 class="card-panel-title">Inventory Ledger &amp; Stock Refill</h3>
+                <p class="card-panel-desc">Quickly adjust warehouse stock levels with 1-click replenish buttons</p>
+              </div>
+            </div>
+            <div class="table-responsive">
+              <table class="admin-table">
+                <thead>
+                  <tr>
+                    <th>Product Item</th>
+                    <th>Pack Size</th>
+                    <th>Available Stock</th>
+                    <th>Threshold</th>
+                    <th>Status</th>
+                    <th>Stock Adjustment</th>
+                  </tr>
+                </thead>
+                <tbody id="inventory-table-tbody">
+                  <!-- Rendered by JS -->
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+
+        <!-- ===================================================================
+             TAB 6: COUPONS & OFFERS
+             =================================================================== -->
+        <div id="tab-coupons" class="admin-tab-pane">
+          <div class="card-panel">
+            <div class="card-panel-header">
+              <div>
+                <h3 class="card-panel-title">Active Coupons &amp; Vedic Festive Offers</h3>
+                <p class="card-panel-desc">Special promotional discounts for checkout</p>
+              </div>
+              <button class="btn-admin btn-gold" style="width:auto; padding:0.6rem 1.1rem;" onclick="openAddCouponModal()">
+                <i class="fa-solid fa-plus"></i> + Create Coupon
+              </button>
+            </div>
+            <div class="table-responsive">
+              <table class="admin-table">
+                <thead>
+                  <tr>
+                    <th>Coupon Code</th>
+                    <th>Discount</th>
+                    <th>Min Cart Value</th>
+                    <th>Description</th>
+                    <th>Status</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody id="coupons-table-tbody">
+                  <!-- Rendered by JS -->
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+
+        <!-- ===================================================================
+             TAB 7: REVIEWS MODERATION
+             =================================================================== -->
+        <div id="tab-reviews" class="admin-tab-pane">
+          <div class="card-panel">
+            <div class="card-panel-header">
+              <div>
+                <h3 class="card-panel-title">Customer Devotee Testimonials</h3>
+                <p class="card-panel-desc">Moderate incoming reviews submitted on the sacred storefront</p>
+              </div>
+            </div>
+            <div class="table-responsive">
+              <table class="admin-table">
+                <thead>
+                  <tr>
+                    <th>Devotee Name</th>
+                    <th>Rating</th>
+                    <th>Offering Reviewed</th>
+                    <th>Comment</th>
+                    <th>Status</th>
+                    <th>Actions</th>
+                  </tr>
+                </thead>
+                <tbody id="reviews-table-tbody">
+                  <!-- Rendered by JS -->
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+
+        <!-- ===================================================================
+             TAB 8: STORE SETTINGS
+             =================================================================== -->
+        <div id="tab-settings" class="admin-tab-pane">
+          <div class="card-panel" style="max-width:700px;">
+            <div class="card-panel-header">
+              <div>
+                <h3 class="card-panel-title">Store &amp; Statutory Compliance Settings</h3>
+                <p class="card-panel-desc">Brand contacts, toll-free number, and Indian legal metrology details</p>
+              </div>
+            </div>
+            <div style="padding:1.5rem;">
+              <form id="store-settings-form" onsubmit="saveStoreSettings(event)">
+                <div class="form-group">
+                  <label>Official Brand Name</label>
+                  <input type="text" class="form-input" id="setting-brand-name" value="Aaradhya Divine Mist Pvt Ltd">
+                </div>
+                <div class="form-grid-2">
+                  <div class="form-group">
+                    <label>Toll-Free Helpline</label>
+                    <input type="text" class="form-input" id="setting-phone" value="1800-208-1080">
+                  </div>
+                  <div class="form-group">
+                    <label>WhatsApp Support</label>
+                    <input type="text" class="form-input" id="setting-whatsapp" value="+91 98765 43210">
+                  </div>
+                </div>
+                <div class="form-grid-2">
+                  <div class="form-group">
+                    <label>Customer Support Email</label>
+                    <input type="email" class="form-input" id="setting-email" value="care@aaradhyadivinemist.com">
+                  </div>
+                  <div class="form-group">
+                    <label>GST Rate Applicable (%)</label>
+                    <input type="number" class="form-input" id="setting-gst" value="18">
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label>Manufacturer &amp; Packer Compliance Address</label>
+                  <textarea class="form-input" id="setting-address" rows="3">Aaradhya Divine Fragrances Pvt Ltd, Survey No. 44, Fragrance Valley, Mysore, Karnataka 570008</textarea>
+                </div>
+                <button type="submit" class="btn-admin btn-gold" style="width:auto; padding:0.75rem 1.75rem;">
+                  <i class="fa-solid fa-floppy-disk"></i> Save Configurations
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+
+      </main>
+    </div>
+  </div>
+
+  <!-- =========================================================================
+       MODAL 1: ADD NEW ADMIN ("admin kaise add kare" solution modal)
+       ========================================================================= -->
+  <div id="modal-add-admin" class="modal-overlay">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h3 class="modal-title"><i class="fa-solid fa-user-plus" style="color:var(--gold-600); margin-right:6px;"></i> Add New Administrator</h3>
+        <button class="modal-close" onclick="closeModal('modal-add-admin')">&times;</button>
+      </div>
+      <form id="add-admin-form" onsubmit="handleCreateAdmin(event)">
+        <div class="form-group">
+          <label for="new-admin-name">Administrator Full Name *</label>
+          <div class="input-icon-wrap">
+            <i class="fa-solid fa-user"></i>
+            <input type="text" id="new-admin-name" required placeholder="e.g. Vikram Sharma">
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="new-admin-email">Administrator Email Address *</label>
+          <div class="input-icon-wrap">
+            <i class="fa-solid fa-envelope"></i>
+            <input type="email" id="new-admin-email" required placeholder="e.g. vikram@aaradhyadivinemist.com">
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="new-admin-password">Secure Password *</label>
+          <div class="input-icon-wrap">
+            <i class="fa-solid fa-lock"></i>
+            <input type="password" id="new-admin-password" required placeholder="Set password for this admin">
+          </div>
+          <div style="display:flex; justify-content:space-between; align-items:center; margin-top:4px;">
+            <span style="font-size:0.72rem; color:var(--text-muted);">Must be at least 6 characters</span>
+            <button type="button" onclick="generateRandomAdminPassword()" style="background:none; border:none; color:var(--gold-600); font-size:0.75rem; font-weight:600; cursor:pointer;">
+              <i class="fa-solid fa-wand-magic-sparkles"></i> Generate Strong Password
+            </button>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="new-admin-role">Administrative Role &amp; Permissions *</label>
+          <div class="input-icon-wrap">
+            <i class="fa-solid fa-shield-halved"></i>
+            <select id="new-admin-role" required>
+              <option value="Super Admin">Super Admin (Full Access to Settings &amp; Admins)</option>
+              <option value="Store Manager">Store Manager (Products, Orders &amp; Inventory)</option>
+              <option value="Logistics Staff">Logistics Staff (Dispatch &amp; AWB Tracking Only)</option>
+            </select>
+          </div>
+        </div>
+
+        <div style="display:flex; gap:0.75rem; margin-top:1.5rem;">
+          <button type="button" class="btn-admin" style="background:#e5e7eb; color:#374151; border:none;" onclick="closeModal('modal-add-admin')">
+            Cancel
+          </button>
+          <button type="submit" class="btn-admin btn-gold">
+            <i class="fa-solid fa-check"></i> Save &amp; Create Admin
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- =========================================================================
+       MODAL 2: ADD / EDIT PRODUCT
+       ========================================================================= -->
+  <div id="modal-product" class="modal-overlay">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h3 class="modal-title" id="product-modal-title">Add Sacred Offering</h3>
+        <button class="modal-close" onclick="closeModal('modal-product')">&times;</button>
+      </div>
+      <form id="product-form" onsubmit="handleSaveProduct(event)">
+        <input type="hidden" id="prod-edit-id">
+
+        <div class="form-group">
+          <label>Product Name *</label>
+          <input type="text" class="form-input" id="prod-name" required placeholder="e.g. Parijat Devotion Agarbatti">
+        </div>
+
+        <div class="form-grid-2">
+          <div class="form-group">
+            <label>Category *</label>
+            <select class="form-input" id="prod-category" required>
+              <option value="sandalwood-collection">Sandalwood Collection</option>
+              <option value="floral-collection">Floral Collection</option>
+              <option value="premium-agarbatti">Premium Agarbatti</option>
+              <option value="daily-pooja-essentials">Daily Pooja Essentials</option>
+              <option value="dhoop-collection">Dhoop Collection</option>
+              <option value="gift-collections">Gift Collections</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>Pack Size *</label>
+            <input type="text" class="form-input" id="prod-pack-size" required placeholder="Pack of 50 Sticks (120g)">
+          </div>
+        </div>
+
+        <div class="form-grid-2">
+          <div class="form-group">
+            <label>Selling Price (₹) *</label>
+            <input type="number" class="form-input" id="prod-price" required min="1" placeholder="349">
+          </div>
+          <div class="form-group">
+            <label>MRP (₹) *</label>
+            <input type="number" class="form-input" id="prod-mrp" required min="1" placeholder="450">
+          </div>
+        </div>
+
+        <div class="form-grid-2">
+          <div class="form-group">
+            <label>Initial Stock Units *</label>
+            <input type="number" class="form-input" id="prod-stock" required min="0" placeholder="100">
+          </div>
+          <div class="form-group">
+            <label>Badge / Tag</label>
+            <input type="text" class="form-input" id="prod-badge" placeholder="e.g. Bestseller / New Launch">
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label>Tagline</label>
+          <input type="text" class="form-input" id="prod-tagline" placeholder="Pure Temple Floral Aroma for Serenity">
+        </div>
+
+        <div class="form-group">
+          <label>Description *</label>
+          <textarea class="form-input" id="prod-desc" rows="3" required placeholder="Detailed spiritual features of this offering..."></textarea>
+        </div>
+
+        <div style="display:flex; gap:0.75rem; margin-top:1.5rem;">
+          <button type="button" class="btn-admin" style="background:#e5e7eb; color:#374151; border:none;" onclick="closeModal('modal-product')">
+            Cancel
+          </button>
+          <button type="submit" class="btn-admin btn-gold">
+            <i class="fa-solid fa-floppy-disk"></i> Save Product
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- =========================================================================
+       MODAL 3: UPDATE ORDER LOGISTICS STATUS
+       ========================================================================= -->
+  <div id="modal-order-status" class="modal-overlay">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h3 class="modal-title">Update Logistics &amp; Dispatch</h3>
+        <button class="modal-close" onclick="closeModal('modal-order-status')">&times;</button>
+      </div>
+      <form id="order-status-form" onsubmit="handleSaveOrderStatus(event)">
+        <input type="hidden" id="order-edit-number">
+
+        <div class="form-group">
+          <label>Order Reference Number</label>
+          <input type="text" class="form-input" id="order-display-num" readonly style="background:#f3f4f6;">
+        </div>
+
+        <div class="form-group">
+          <label>Dispatch Status *</label>
+          <select class="form-input" id="order-select-status" required>
+            <option value="Confirmed">Order Confirmed</option>
+            <option value="Sacred Packing">Sacred Packing &amp; Consecration</option>
+            <option value="In Transit">In Transit with Courier</option>
+            <option value="Out for Delivery">Out for Delivery</option>
+            <option value="Delivered">Delivered Safely</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label>Courier Partner &amp; AWB Tracking Number *</label>
+          <input type="text" class="form-input" id="order-courier-awb" required placeholder="e.g. Blue Dart Express (AWB: BLUEDART98765432)">
+        </div>
+
+        <div style="display:flex; gap:0.75rem; margin-top:1.5rem;">
+          <button type="button" class="btn-admin" style="background:#e5e7eb; color:#374151; border:none;" onclick="closeModal('modal-order-status')">
+            Cancel
+          </button>
+          <button type="submit" class="btn-admin btn-gold">
+            <i class="fa-solid fa-truck-fast"></i> Update Dispatch Details
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- =========================================================================
+       MODAL 4: CREATE COUPON
+       ========================================================================= -->
+  <div id="modal-coupon" class="modal-overlay">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h3 class="modal-title">Create Promo Coupon</h3>
+        <button class="modal-close" onclick="closeModal('modal-coupon')">&times;</button>
+      </div>
+      <form id="coupon-form" onsubmit="handleSaveCoupon(event)">
+        <div class="form-group">
+          <label>Coupon Code *</label>
+          <input type="text" class="form-input" id="coupon-code" required placeholder="e.g. DIWALI15" style="text-transform:uppercase;">
+        </div>
+
+        <div class="form-grid-2">
+          <div class="form-group">
+            <label>Discount Percentage (%) *</label>
+            <input type="number" class="form-input" id="coupon-discount" required min="1" max="100" placeholder="15">
+          </div>
+          <div class="form-group">
+            <label>Minimum Cart Value (₹) *</label>
+            <input type="number" class="form-input" id="coupon-min" required min="0" placeholder="599">
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label>Offer Description *</label>
+          <input type="text" class="form-input" id="coupon-desc" required placeholder="15% OFF on festival orders above ₹599">
+        </div>
+
+        <div style="display:flex; gap:0.75rem; margin-top:1.5rem;">
+          <button type="button" class="btn-admin" style="background:#e5e7eb; color:#374151; border:none;" onclick="closeModal('modal-coupon')">
+            Cancel
+          </button>
+          <button type="submit" class="btn-admin btn-gold">
+            <i class="fa-solid fa-tag"></i> Create Coupon
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Toast Container -->
+  <div class="toast-container" id="toast-container"></div>
+
+  <!-- =========================================================================
+       JAVASCRIPT APPLICATION LOGIC
+       ========================================================================= -->
+  <script>
+    // Initial Seed Data
+    const DEFAULT_ADMIN = {
+      id: 'adm-root-1',
+      name: 'Super Admin',
+      email: 'admin@aaradhyadivinemist.com',
+      password: 'AaradhyaDivine2026!',
+      role: 'Super Admin',
+      status: 'Active',
+      createdAt: '12 Nov 2026'
+    };
+
+    const DEFAULT_PRODUCTS = [
+      {
+        id: "prod-sandalwood-essence",
+        name: "Sandalwood Essence Agarbatti",
+        slug: "sandalwood-essence-agarbatti",
+        categorySlug: "sandalwood-collection",
+        categoryName: "Sandalwood Collection",
+        price: 349,
+        mrp: 450,
+        packSize: "Pack of 50 Sticks (120g)",
+        stock: 83,
+        status: "Published",
+        badge: "Bestseller",
+        images: ["images/products/sandalwood.png"],
+        description: "Pure Mysore Chandan Incense for Deep Contemplation and pooja."
+      },
+      {
+        id: "prod-divine-rose",
+        name: "Divine Rose Incense Sticks",
+        slug: "divine-rose-incense-sticks",
+        categorySlug: "floral-collection",
+        categoryName: "Floral Collection",
+        price: 299,
+        mrp: 399,
+        packSize: "Pack of 45 Sticks (100g)",
+        stock: 94,
+        status: "Published",
+        badge: "Pure Temple Floral",
+        images: ["images/products/rose.png"],
+        description: "Distilled Indian Damask Rose for Devotional Harmony."
+      },
+      {
+        id: "prod-mogra-bliss",
+        name: "Mogra Bliss Agarbatti",
+        slug: "mogra-bliss-agarbatti",
+        categorySlug: "floral-collection",
+        categoryName: "Floral Collection",
+        price: 299,
+        mrp: 399,
+        packSize: "Pack of 45 Sticks (100g)",
+        stock: 67,
+        status: "Published",
+        badge: "Morning Divine",
+        images: ["images/products/mogra.png"],
+        description: "Freshly harvested nocturnal jasmine flowers distilled at dawn."
+      },
+      {
+        id: "prod-lavender-calm",
+        name: "Lavender Calm Incense Sticks",
+        slug: "lavender-calm-incense-sticks",
+        categorySlug: "premium-agarbatti",
+        categoryName: "Premium Agarbatti",
+        price: 320,
+        mrp: 420,
+        packSize: "Pack of 40 Sticks (90g)",
+        stock: 52,
+        status: "Published",
+        badge: "Meditation Special",
+        images: ["images/products/lavender.png"],
+        description: "Kashmiri wild lavender essential oils for serene meditation."
+      },
+      {
+        id: "prod-pure-dhoop",
+        name: "Divine Dhoop Pure Cow Dung & Loban Sticks",
+        slug: "divine-dhoop-pure-cow-dung-loban-sticks",
+        categorySlug: "dhoop-collection",
+        categoryName: "Dhoop Collection",
+        price: 279,
+        mrp: 350,
+        packSize: "Pack of 30 Thick Dhoop Sticks (150g)",
+        stock: 110,
+        status: "Published",
+        badge: "Charcoal-Free Veda",
+        images: ["images/products/dhoop.png"],
+        description: "Desi Gir cow dung, medicinal havan herbs and authentic Loban."
+      },
+      {
+        id: "prod-royal-gift-kit",
+        name: "Aaradhya Divine Pooja Kit",
+        slug: "aaradhya-divine-pooja-kit",
+        categorySlug: "gift-collections",
+        categoryName: "Gift Collections",
+        price: 1299,
+        mrp: 1699,
+        packSize: "Royal Velvet Hardbound Box (1.2 kg)",
+        stock: 35,
+        status: "Published",
+        badge: "Festive Royal Hamper",
+        images: ["images/products/kit.png"],
+        description: "Complete royal gift hamper with Sandalwood, Rose, Loban and Brass Diya."
+      }
+    ];
+
+    const DEFAULT_ORDERS = [
+      {
+        orderNumber: "ADM-2026-1001",
+        customerName: "Priyanka Sharma",
+        phone: "+91 98765 12345",
+        date: "12 Nov 2026",
+        items: ["Sandalwood Essence Agarbatti (x2)", "Divine Rose Incense (x1)"],
+        total: 997,
+        status: "In Transit",
+        courier: "Blue Dart Express (AWB: BLUEDART78942105)",
+        step: 4
+      },
+      {
+        orderNumber: "ADM-2026-1002",
+        customerName: "Arjun Mehta",
+        phone: "+91 98111 22334",
+        date: "11 Nov 2026",
+        items: ["Aaradhya Divine Pooja Kit (x1)"],
+        total: 1349,
+        status: "Out for Delivery",
+        courier: "Delhivery Surface (AWB: DELHIVERY84729103)",
+        step: 3
+      }
+    ];
+
+    const DEFAULT_COUPONS = [
+      { code: "DIVINE10", discount: 10, min: 799, desc: "10% OFF on all divine orders above ₹799", status: "Active" },
+      { code: "VEDIC20", discount: 20, min: 1499, desc: "20% Festive Savings on Hampers above ₹1499", status: "Active" },
+      { code: "FREESHIP", discount: 0, min: 499, desc: "Free Express Pan-India Devotee Delivery", status: "Active" }
+    ];
+
+    // State Variables
+    let currentAdmin = null;
+    let adminsList = [];
+    let productsList = [];
+    let ordersList = [];
+    let couponsList = [];
+    let reviewsList = [];
+
+    // Helper functions for localStorage
+    function loadStorage(key, fallback) {
+      try {
+        const item = localStorage.getItem(key);
+        return item ? JSON.parse(item) : fallback;
+      } catch (e) {
+        return fallback;
+      }
+    }
+
+    function saveStorage(key, val) {
+      try {
+        localStorage.setItem(key, JSON.stringify(val));
+      } catch (e) {
+        console.warn(e);
+      }
+    }
+
+    // Initialize App
+    document.addEventListener('DOMContentLoaded', () => {
+      // 1. Load Admins
+      adminsList = loadStorage('adm_admins', [DEFAULT_ADMIN]);
+      // If default admin missing, add it
+      if (!adminsList.some(a => a.email === DEFAULT_ADMIN.email)) {
+        adminsList.unshift(DEFAULT_ADMIN);
+        saveStorage('adm_admins', adminsList);
+      }
+
+      // 2. Load Products
+      productsList = loadStorage('adm_products', DEFAULT_PRODUCTS);
+
+      // 3. Load Orders
+      ordersList = loadStorage('adm_orders', DEFAULT_ORDERS);
+
+      // 4. Load Coupons
+      couponsList = loadStorage('adm_coupons', DEFAULT_COUPONS);
+
+      // 5. Load Reviews
+      reviewsList = loadStorage('adm_reviews', [
+        {
+          author: "Meera Ramanathan",
+          location: "Bengaluru, Karnataka",
+          rating: 5,
+          product: "Sandalwood Essence Agarbatti",
+          comment: "Brings pure temple peace into morning meditation. Charcoal-free aroma that never irritates the throat.",
+          status: "Approved"
+        },
+        {
+          author: "Pandit Rajesh Joshi",
+          location: "Varanasi, UP",
+          rating: 5,
+          product: "Divine Dhoop Pure Cow Dung & Loban Sticks",
+          comment: "Authentic Vedic formulation. The desi cow dung and loban smoke completely purifies the environment.",
+          status: "Approved"
+        }
+      ]);
+
+      // Check current login session
+      const savedSession = sessionStorage.getItem('adm_current_admin');
+      if (savedSession) {
+        currentAdmin = JSON.parse(savedSession);
+        showAdminSuite();
+      } else {
+        showLoginView();
+      }
+
+      setupTabs();
+      setupLoginForm();
+    });
+
+    /* ==========================================================================
+       Authentication
+       ========================================================================== */
+    function showLoginView() {
+      document.getElementById('login-view').style.display = 'flex';
+      document.getElementById('admin-suite-view').style.display = 'none';
+    }
+
+    function showAdminSuite() {
+      document.getElementById('login-view').style.display = 'none';
+      document.getElementById('admin-suite-view').style.display = 'flex';
+
+      // Update Topbar
+      document.getElementById('topbar-user-name').textContent = currentAdmin.name;
+      document.getElementById('topbar-user-role').textContent = currentAdmin.role;
+      document.getElementById('topbar-avatar').textContent = currentAdmin.name.charAt(0).toUpperCase();
+
+      // Refresh All Tables & Counts
+      refreshAll();
+    }
+
+    function setupLoginForm() {
+      const form = document.getElementById('admin-login-form');
+      form.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const email = document.getElementById('admin-email-input').value.trim();
+        const password = document.getElementById('admin-password-input').value.trim();
+
+        // Check against adminsList
+        const matched = adminsList.find(a => a.email.toLowerCase() === email.toLowerCase() && a.password === password);
+
+        if (matched) {
+          if (matched.status === 'Inactive') {
+            showToast('This admin account has been deactivated. Please contact Super Admin.', 'error');
+            return;
+          }
+          currentAdmin = matched;
+          sessionStorage.setItem('adm_current_admin', JSON.stringify(currentAdmin));
+          showToast(`Welcome, ${currentAdmin.name}! Access granted.`, 'success');
+          showAdminSuite();
+        } else {
+          showToast('Invalid administrator email or password.', 'error');
+        }
+      });
+    }
+
+    function handleLogout() {
+      sessionStorage.removeItem('adm_current_admin');
+      currentAdmin = null;
+      showToast('Signed out of Administrator Portal safely.', 'info');
+      showLoginView();
+    }
+
+    /* ==========================================================================
+       Tabs Navigation
+       ========================================================================== */
+    function setupTabs() {
+      const navItems = document.querySelectorAll('.sidebar-nav .nav-item');
+      navItems.forEach(item => {
+        item.addEventListener('click', () => {
+          const targetTab = item.getAttribute('data-tab');
+          switchTab(targetTab);
+        });
+      });
+    }
+
+    function switchTab(tabId) {
+      document.querySelectorAll('.sidebar-nav .nav-item').forEach(item => {
+        if (item.getAttribute('data-tab') === tabId) {
+          item.classList.add('active');
+          const title = item.querySelector('span').textContent;
+          document.getElementById('topbar-title').textContent = title;
+        } else {
+          item.classList.remove('active');
+        }
+      });
+
+      document.querySelectorAll('.admin-tab-pane').forEach(pane => {
+        if (pane.id === tabId) {
+          pane.classList.add('active');
+        } else {
+          pane.classList.remove('active');
+        }
+      });
+
+      // Close mobile sidebar if open
+      document.getElementById('admin-sidebar').classList.remove('open');
+    }
+
+    function toggleSidebar() {
+      document.getElementById('admin-sidebar').classList.toggle('open');
+    }
+
+    /* ==========================================================================
+       Render Tables & Counts
+       ========================================================================== */
+    function refreshAll() {
+      renderOverview();
+      renderAdmins();
+      renderProducts();
+      renderOrders();
+      renderInventory();
+      renderCoupons();
+      renderReviews();
+
+      // Badges
+      document.getElementById('badge-admin-count').textContent = adminsList.length;
+      document.getElementById('badge-product-count').textContent = productsList.length;
+      document.getElementById('badge-order-count').textContent = ordersList.length;
+    }
+
+    function renderOverview() {
+      // Stats
+      const totalRev = ordersList.reduce((sum, ord) => sum + (ord.total || 0), 0);
+      document.getElementById('stat-revenue').textContent = '₹' + totalRev.toLocaleString('en-IN');
+      document.getElementById('stat-orders-count').textContent = ordersList.length;
+      document.getElementById('stat-products-count').textContent = productsList.length;
+      document.getElementById('stat-admins-count').textContent = adminsList.length;
+
+      // Table Recent Orders
+      const tbody = document.getElementById('overview-orders-tbody');
+      tbody.innerHTML = '';
+      const recent = ordersList.slice(0, 5);
+      if (recent.length === 0) {
+        tbody.innerHTML = '<tr><td colspan="7" style="text-align:center; padding:1.5rem;">No orders placed yet.</td></tr>';
+        return;
+      }
+      recent.forEach(ord => {
+        const tr = document.createElement('tr');
+        tr.innerHTML = `
+          <td><strong>${ord.orderNumber}</strong></td>
+          <td>${ord.customerName}</td>
+          <td>${ord.date}</td>
+          <td>${(ord.items || []).join(', ')}</td>
+          <td><strong>₹${(ord.total || 0).toLocaleString('en-IN')}</strong></td>
+          <td><span class="status-pill ${ord.status === 'Delivered' ? 'success' : 'warning'}">${ord.status}</span></td>
+          <td>
+            <button class="action-icon-btn" onclick="openOrderStatusModal('${ord.orderNumber}')" title="Update Status">
+              <i class="fa-solid fa-pen-to-square"></i>
+            </button>
+          </td>
+        `;
+        tbody.appendChild(tr);
+      });
+    }
+
+    /* ==========================================================================
+       ADMIN MANAGEMENT ("admin kaise add kare" functionality)
+       ========================================================================== */
+    function renderAdmins() {
+      const tbody = document.getElementById('admins-table-tbody');
+      tbody.innerHTML = '';
+
+      adminsList.forEach(admin => {
+        const tr = document.createElement('tr');
+        const isCurrent = currentAdmin && currentAdmin.email === admin.email;
+        const roleClass = admin.role === 'Super Admin' ? 'gold' : 'info';
+        const statusClass = admin.status === 'Active' ? 'success' : 'danger';
+
+        tr.innerHTML = `
+          <td>
+            <div style="display:flex; align-items:center; gap:0.6rem;">
+              <div class="user-avatar-sm">${admin.name.charAt(0).toUpperCase()}</div>
+              <div>
+                <strong>${admin.name}</strong>
+                ${isCurrent ? '<span style="font-size:0.65rem; background:#dcfce7; color:#15803d; padding:1px 6px; border-radius:4px; margin-left:4px;">You</span>' : ''}
+              </div>
+            </div>
+          </td>
+          <td><code>${admin.email}</code></td>
+          <td><span class="status-pill ${roleClass}">${admin.role}</span></td>
+          <td><span class="status-pill ${statusClass}">${admin.status}</span></td>
+          <td>${admin.createdAt || '12 Nov 2026'}</td>
+          <td>
+            <div style="display:flex; gap:0.4rem;">
+              <button class="action-icon-btn" title="Toggle Active/Inactive" onclick="toggleAdminStatus('${admin.id}')" ${isCurrent ? 'disabled style="opacity:0.4;"' : ''}>
+                <i class="fa-solid ${admin.status === 'Active' ? 'fa-user-slash' : 'fa-user-check'}"></i>
+              </button>
+              <button class="action-icon-btn delete" title="Delete Admin" onclick="deleteAdmin('${admin.id}')" ${isCurrent ? 'disabled style="opacity:0.4;"' : ''}>
+                <i class="fa-solid fa-trash-can"></i>
+              </button>
+            </div>
+          </td>
+        `;
+        tbody.appendChild(tr);
+      });
+    }
+
+    function openAddAdminModal() {
+      document.getElementById('add-admin-form').reset();
+      openModal('modal-add-admin');
+    }
+
+    function generateRandomAdminPassword() {
+      const chars = 'ABCDEFGHJKLMNPQRSTUVWXYZabcdefghijkmnpqrstuvwxyz23456789!@#$%';
+      let pass = 'Aaradhya';
+      for (let i = 0; i < 4; i++) {
+        pass += chars.charAt(Math.floor(Math.random() * chars.length));
+      }
+      pass += '2026!';
+      const input = document.getElementById('new-admin-password');
+      input.type = 'text';
+      input.value = pass;
+      showToast('Generated strong password: ' + pass, 'info');
+    }
+
+    function handleCreateAdmin(e) {
+      e.preventDefault();
+      const name = document.getElementById('new-admin-name').value.trim();
+      const email = document.getElementById('new-admin-email').value.trim();
+      const password = document.getElementById('new-admin-password').value.trim();
+      const role = document.getElementById('new-admin-role').value;
+
+      if (password.length < 6) {
+        showToast('Password must be at least 6 characters long.', 'error');
+        return;
+      }
+
+      // Check duplicate email
+      if (adminsList.some(a => a.email.toLowerCase() === email.toLowerCase())) {
+        showToast('An administrator with this email already exists.', 'error');
+        return;
+      }
+
+      const newAdmin = {
+        id: 'adm-' + Date.now(),
+        name,
+        email,
+        password,
+        role,
+        status: 'Active',
+        createdAt: new Date().toLocaleDateString('en-IN', { day: '2-digit', month: 'short', year: 'numeric' })
+      };
+
+      adminsList.push(newAdmin);
+      saveStorage('adm_admins', adminsList);
+      closeModal('modal-add-admin');
+      refreshAll();
+      showToast(`Admin "${name}" added successfully! They can now log in with ${email}.`, 'success');
+    }
+
+    function toggleAdminStatus(adminId) {
+      const admin = adminsList.find(a => a.id === adminId);
+      if (!admin) return;
+      if (currentAdmin && currentAdmin.id === adminId) {
+        showToast('You cannot deactivate your own account.', 'error');
+        return;
+      }
+      admin.status = admin.status === 'Active' ? 'Inactive' : 'Active';
+      saveStorage('adm_admins', adminsList);
+      refreshAll();
+      showToast(`Admin ${admin.name} is now ${admin.status}.`, 'info');
+    }
+
+    function deleteAdmin(adminId) {
+      if (currentAdmin && currentAdmin.id === adminId) {
+        showToast('You cannot delete your own account.', 'error');
+        return;
+      }
+      if (!confirm('Are you sure you want to remove this administrator?')) return;
+      adminsList = adminsList.filter(a => a.id !== adminId);
+      saveStorage('adm_admins', adminsList);
+      refreshAll();
+      showToast('Administrator removed successfully.', 'info');
+    }
+
+    /* ==========================================================================
+       PRODUCTS MANAGEMENT
+       ========================================================================== */
+    function renderProducts() {
+      const tbody = document.getElementById('products-table-tbody');
+      tbody.innerHTML = '';
+
+      productsList.forEach(prod => {
+        const tr = document.createElement('tr');
+        const isLow = prod.stock < 15;
+        tr.innerHTML = `
+          <td>
+            <strong>${prod.name}</strong>
+            <div style="font-size:0.72rem; color:var(--text-muted);">${prod.packSize || ''}</div>
+          </td>
+          <td><span class="status-pill info">${prod.categoryName || prod.categorySlug}</span></td>
+          <td><strong>₹${prod.price}</strong></td>
+          <td style="color:var(--text-light); text-decoration:line-through;">₹${prod.mrp}</td>
+          <td>
+            <span style="font-weight:700; color:${isLow ? '#b91c1c' : '#15803d'};">
+              ${prod.stock} units ${isLow ? '⚠️' : ''}
+            </span>
+          </td>
+          <td>
+            <span class="status-pill ${prod.status === 'Published' ? 'success' : 'warning'}">
+              ${prod.status}
+            </span>
+          </td>
+          <td>
+            <div style="display:flex; gap:0.4rem;">
+              <button class="action-icon-btn" title="Edit Product" onclick="openEditProductModal('${prod.id}')">
+                <i class="fa-solid fa-pen-to-square"></i>
+              </button>
+              <button class="action-icon-btn delete" title="Delete Product" onclick="deleteProduct('${prod.id}')">
+                <i class="fa-solid fa-trash-can"></i>
+              </button>
+            </div>
+          </td>
+        `;
+        tbody.appendChild(tr);
+      });
+    }
+
+    function openAddProductModal() {
+      document.getElementById('product-form').reset();
+      document.getElementById('prod-edit-id').value = '';
+      document.getElementById('product-modal-title').textContent = 'Add Sacred Offering';
+      openModal('modal-product');
+    }
+
+    function openEditProductModal(prodId) {
+      const prod = productsList.find(p => p.id === prodId);
+      if (!prod) return;
+      document.getElementById('prod-edit-id').value = prod.id;
+      document.getElementById('prod-name').value = prod.name;
+      document.getElementById('prod-category').value = prod.categorySlug;
+      document.getElementById('prod-pack-size').value = prod.packSize || '';
+      document.getElementById('prod-price').value = prod.price;
+      document.getElementById('prod-mrp').value = prod.mrp;
+      document.getElementById('prod-stock').value = prod.stock;
+      document.getElementById('prod-badge').value = prod.badge || '';
+      document.getElementById('prod-tagline').value = prod.tagline || '';
+      document.getElementById('prod-desc').value = prod.description || '';
+      document.getElementById('product-modal-title').textContent = 'Edit Sacred Offering';
+      openModal('modal-product');
+    }
+
+    function handleSaveProduct(e) {
+      e.preventDefault();
+      const editId = document.getElementById('prod-edit-id').value;
+      const name = document.getElementById('prod-name').value.trim();
+      const catSlug = document.getElementById('prod-category').value;
+      const packSize = document.getElementById('prod-pack-size').value.trim();
+      const price = parseFloat(document.getElementById('prod-price').value);
+      const mrp = parseFloat(document.getElementById('prod-mrp').value);
+      const stock = parseInt(document.getElementById('prod-stock').value, 10);
+      const badge = document.getElementById('prod-badge').value.trim();
+      const tagline = document.getElementById('prod-tagline').value.trim();
+      const desc = document.getElementById('prod-desc').value.trim();
+
+      const catNameMap = {
+        'sandalwood-collection': 'Sandalwood Collection',
+        'floral-collection': 'Floral Collection',
+        'premium-agarbatti': 'Premium Agarbatti',
+        'daily-pooja-essentials': 'Daily Pooja Essentials',
+        'dhoop-collection': 'Dhoop Collection',
+        'gift-collections': 'Gift Collections'
+      };
+
+      if (editId) {
+        // Edit
+        const p = productsList.find(item => item.id === editId);
+        if (p) {
+          p.name = name;
+          p.categorySlug = catSlug;
+          p.categoryName = catNameMap[catSlug] || catSlug;
+          p.packSize = packSize;
+          p.price = price;
+          p.mrp = mrp;
+          p.stock = stock;
+          p.badge = badge;
+          p.tagline = tagline;
+          p.description = desc;
+        }
+        showToast('Product updated successfully!', 'success');
+      } else {
+        // Add
+        const newProd = {
+          id: 'prod-' + Date.now(),
+          name,
+          slug: name.toLowerCase().replace(/[^a-z0-9]+/g, '-'),
+          categorySlug: catSlug,
+          categoryName: catNameMap[catSlug] || catSlug,
+          packSize,
+          price,
+          mrp,
+          stock,
+          status: 'Published',
+          badge,
+          tagline,
+          description: desc,
+          images: ['images/products/sandalwood.png'],
+          features: ['100% Charcoal-Free', 'Pure Vedic Aroma'],
+          rating: 5.0,
+          reviewsCount: 1
+        };
+        productsList.push(newProd);
+        showToast('New sacred product added to catalog!', 'success');
+      }
+
+      saveStorage('adm_products', productsList);
+      closeModal('modal-product');
+      refreshAll();
+    }
+
+    function deleteProduct(prodId) {
+      if (!confirm('Are you sure you want to delete this product?')) return;
+      productsList = productsList.filter(p => p.id !== prodId);
+      saveStorage('adm_products', productsList);
+      refreshAll();
+      showToast('Product deleted from catalog.', 'info');
+    }
+
+    /* ==========================================================================
+       ORDERS & LOGISTICS
+       ========================================================================== */
+    function renderOrders() {
+      const tbody = document.getElementById('orders-table-tbody');
+      tbody.innerHTML = '';
+
+      ordersList.forEach(ord => {
+        const tr = document.createElement('tr');
+        tr.innerHTML = `
+          <td><strong>${ord.orderNumber}</strong></td>
+          <td>
+            <strong>${ord.customerName}</strong>
+            <div style="font-size:0.72rem; color:var(--text-muted);">${ord.phone || ''}</div>
+          </td>
+          <td>${ord.date}</td>
+          <td>${(ord.items || []).join(', ')}</td>
+          <td><strong>₹${(ord.total || 0).toLocaleString('en-IN')}</strong></td>
+          <td><code>${ord.courier || 'Pending Blue Dart pickup'}</code></td>
+          <td><span class="status-pill ${ord.status === 'Delivered' ? 'success' : 'warning'}">${ord.status}</span></td>
+          <td>
+            <button class="action-icon-btn" onclick="openOrderStatusModal('${ord.orderNumber}')" title="Update Logistics">
+              <i class="fa-solid fa-truck-ramp-box"></i>
+            </button>
+          </td>
+        `;
+        tbody.appendChild(tr);
+      });
+    }
+
+    function openOrderStatusModal(orderNumber) {
+      const ord = ordersList.find(o => o.orderNumber === orderNumber);
+      if (!ord) return;
+      document.getElementById('order-edit-number').value = ord.orderNumber;
+      document.getElementById('order-display-num').value = ord.orderNumber + ' (' + ord.customerName + ')';
+      document.getElementById('order-select-status').value = ord.status;
+      document.getElementById('order-courier-awb').value = ord.courier || 'Blue Dart Express (AWB: BLUEDART' + Math.floor(10000000 + Math.random() * 90000000) + ')';
+      openModal('modal-order-status');
+    }
+
+    function handleSaveOrderStatus(e) {
+      e.preventDefault();
+      const num = document.getElementById('order-edit-number').value;
+      const ord = ordersList.find(o => o.orderNumber === num);
+      if (!ord) return;
+
+      const newStatus = document.getElementById('order-select-status').value;
+      const courier = document.getElementById('order-courier-awb').value;
+
+      ord.status = newStatus;
+      ord.courier = courier;
+
+      // Map step for progress bar in index.html#track
+      if (newStatus === 'Confirmed') ord.step = 1;
+      else if (newStatus === 'Sacred Packing') ord.step = 2;
+      else if (newStatus === 'In Transit') ord.step = 3;
+      else if (newStatus === 'Out for Delivery') ord.step = 4;
+      else if (newStatus === 'Delivered') ord.step = 5;
+
+      saveStorage('adm_orders', ordersList);
+      closeModal('modal-order-status');
+      refreshAll();
+      showToast(`Order ${num} updated to "${newStatus}"! Devotee tracking updated.`, 'success');
+    }
+
+    /* ==========================================================================
+       INVENTORY LEDGER
+       ========================================================================== */
+    function renderInventory() {
+      const tbody = document.getElementById('inventory-table-tbody');
+      tbody.innerHTML = '';
+
+      productsList.forEach(prod => {
+        const isLow = prod.stock < 15;
+        const tr = document.createElement('tr');
+        tr.innerHTML = `
+          <td><strong>${prod.name}</strong></td>
+          <td>${prod.packSize || '-'}</td>
+          <td><strong style="font-size:1rem; color:${isLow ? '#b91c1c' : '#15803d'};">${prod.stock}</strong></td>
+          <td>15 units</td>
+          <td><span class="status-pill ${isLow ? 'danger' : 'success'}">${isLow ? 'Low Stock' : 'Optimal'}</span></td>
+          <td>
+            <div style="display:flex; gap:0.35rem; align-items:center;">
+              <button class="action-icon-btn" onclick="adjustStock('${prod.id}', 10)" title="Add +10 Units">+10</button>
+              <button class="action-icon-btn" onclick="adjustStock('${prod.id}', 50)" title="Add +50 Units">+50</button>
+              <button class="action-icon-btn" onclick="adjustStock('${prod.id}', -10)" title="Deduct -10 Units">-10</button>
+            </div>
+          </td>
+        `;
+        tbody.appendChild(tr);
+      });
+    }
+
+    function adjustStock(prodId, diff) {
+      const p = productsList.find(item => item.id === prodId);
+      if (!p) return;
+      p.stock = Math.max(0, p.stock + diff);
+      saveStorage('adm_products', productsList);
+      refreshAll();
+      showToast(`Stock for ${p.name} adjusted by ${diff > 0 ? '+' + diff : diff}. New stock: ${p.stock}`, 'info');
+    }
+
+    /* ==========================================================================
+       COUPONS & OFFERS
+       ========================================================================== */
+    function renderCoupons() {
+      const tbody = document.getElementById('coupons-table-tbody');
+      tbody.innerHTML = '';
+
+      couponsList.forEach((coup, index) => {
+        const tr = document.createElement('tr');
+        tr.innerHTML = `
+          <td><code style="font-weight:700; color:var(--forest-900); background:#fdf8eb; padding:2px 8px; border-radius:4px; border:1px solid var(--border-gold);">${coup.code}</code></td>
+          <td><strong>${coup.discount}% OFF</strong></td>
+          <td>₹${coup.min}</td>
+          <td>${coup.desc}</td>
+          <td><span class="status-pill success">${coup.status}</span></td>
+          <td>
+            <button class="action-icon-btn delete" onclick="deleteCoupon(${index})" title="Delete Coupon">
+              <i class="fa-solid fa-trash-can"></i>
+            </button>
+          </td>
+        `;
+        tbody.appendChild(tr);
+      });
+    }
+
+    function openAddCouponModal() {
+      document.getElementById('coupon-form').reset();
+      openModal('modal-coupon');
+    }
+
+    function handleSaveCoupon(e) {
+      e.preventDefault();
+      const code = document.getElementById('coupon-code').value.trim().toUpperCase();
+      const discount = parseInt(document.getElementById('coupon-discount').value, 10);
+      const min = parseInt(document.getElementById('coupon-min').value, 10);
+      const desc = document.getElementById('coupon-desc').value.trim();
+
+      couponsList.push({ code, discount, min, desc, status: 'Active' });
+      saveStorage('adm_coupons', couponsList);
+      closeModal('modal-coupon');
+      refreshAll();
+      showToast(`Coupon ${code} created successfully!`, 'success');
+    }
+
+    function deleteCoupon(idx) {
+      couponsList.splice(idx, 1);
+      saveStorage('adm_coupons', couponsList);
+      refreshAll();
+      showToast('Coupon removed.', 'info');
+    }
+
+    /* ==========================================================================
+       REVIEWS MODERATION
+       ========================================================================== */
+    function renderReviews() {
+      const tbody = document.getElementById('reviews-table-tbody');
+      tbody.innerHTML = '';
+
+      reviewsList.forEach((rev, index) => {
+        const tr = document.createElement('tr');
+        tr.innerHTML = `
+          <td>
+            <strong>${rev.author}</strong>
+            <div style="font-size:0.72rem; color:var(--text-muted);">${rev.location || ''}</div>
+          </td>
+          <td><span style="color:var(--gold-600);"><i class="fa-solid fa-star"></i> ${rev.rating}.0</span></td>
+          <td>${rev.product}</td>
+          <td style="max-width:280px; font-style:italic;">"${rev.comment}"</td>
+          <td><span class="status-pill ${rev.status === 'Approved' ? 'success' : 'warning'}">${rev.status}</span></td>
+          <td>
+            <div style="display:flex; gap:0.4rem;">
+              <button class="action-icon-btn" onclick="approveReview(${index})" title="Approve">
+                <i class="fa-solid fa-check"></i>
+              </button>
+              <button class="action-icon-btn delete" onclick="deleteReview(${index})" title="Delete">
+                <i class="fa-solid fa-trash-can"></i>
+              </button>
+            </div>
+          </td>
+        `;
+        tbody.appendChild(tr);
+      });
+    }
+
+    function approveReview(idx) {
+      reviewsList[idx].status = 'Approved';
+      saveStorage('adm_reviews', reviewsList);
+      refreshAll();
+      showToast('Review approved for public showcase.', 'success');
+    }
+
+    function deleteReview(idx) {
+      reviewsList.splice(idx, 1);
+      saveStorage('adm_reviews', reviewsList);
+      refreshAll();
+      showToast('Review removed.', 'info');
+    }
+
+    /* ==========================================================================
+       STORE SETTINGS
+       ========================================================================== */
+    function saveStoreSettings(e) {
+      e.preventDefault();
+      showToast('Store settings & compliance declarations updated!', 'success');
+    }
+
+    /* ==========================================================================
+       MODAL & TOAST HELPERS
+       ========================================================================== */
+    function openModal(id) {
+      const m = document.getElementById(id);
+      if (m) m.classList.add('active');
+    }
+
+    function closeModal(id) {
+      const m = document.getElementById(id);
+      if (m) m.classList.remove('active');
+    }
+
+    function showToast(msg, type = 'info') {
+      const container = document.getElementById('toast-container');
+      const toast = document.createElement('div');
+      toast.className = 'toast-box';
+
+      let icon = 'fa-circle-info';
+      if (type === 'success') icon = 'fa-circle-check';
+      if (type === 'error') icon = 'fa-triangle-exclamation';
+
+      toast.innerHTML = `
+        <i class="fa-solid ${icon}" style="color:var(--gold-500); font-size:1.1rem;"></i>
+        <span>${msg}</span>
+      `;
+
+      container.appendChild(toast);
+      setTimeout(() => {
+        toast.style.transition = 'all 0.3s ease';
+        toast.style.opacity = '0';
+        toast.style.transform = 'translateX(100%)';
+        setTimeout(() => toast.remove(), 300);
+      }, 4000);
+    }
+  </script>
+</body>
+</html>
