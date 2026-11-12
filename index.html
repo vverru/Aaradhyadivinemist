@@ -1,0 +1,916 @@
+<!DOCTYPE html>
+<html lang="hi" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <title>Aaradhya Divine Mist | Luxury Spiritual Fragrance & Pooja Essentials</title>
+  
+  <!-- SEO & Social Meta -->
+  <meta name="description" content="Way to connect your Aaradhya - 100% Charcoal-free handcrafted agarbatti, authentic Mysore sandalwood, holy temple floral attars, and royal festive pooja essentials.">
+  <meta name="keywords" content="Aaradhya Divine Mist, Agarbatti, Charcoal free agarbatti, Mysore Sandalwood, Temple flowers, Pooja essentials, Dhoop sticks, Indian incense">
+  <meta name="theme-color" content="#183B2C">
+  <link rel="icon" type="image/svg+xml" href="images/logo/logo.svg">
+
+  <!-- Google Fonts & Font Awesome 6 Icons -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <!-- Main Stylesheet -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- =========================================================================
+       1. Top Announcement Bar
+       ========================================================================= -->
+  <div class="announcement-bar">
+    <div class="container" style="display:flex; justify-content:space-between; align-items:center; width:100%;">
+      <div class="announcement-text">
+        <span>✨ <strong>दिवाली व पावन उत्सव विशेष:</strong> Use code <strong>DIVINE10</strong> for 10% OFF | Free Express Delivery above ₹799</span>
+      </div>
+      <div class="announcement-contact">
+        <a href="tel:18002081080"><i class="fa-solid fa-phone"></i> 1800-208-1080 (Toll-Free)</a>
+        <a href="https://wa.me/919876543210" target="_blank" rel="noopener"><i class="fa-brands fa-whatsapp"></i> +91 98765 43210</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- =========================================================================
+       2. Sticky Navigation Header
+       ========================================================================= -->
+  <header class="header" id="main-header">
+    <div class="container">
+      <div class="header-inner">
+        <!-- Brand Identity Logo -->
+        <a href="#home" class="brand-logo-wrap" aria-label="Aaradhya Divine Mist Home">
+          <div class="brand-emblem">
+            <i class="fa-solid fa-om" style="font-size: 1.35rem;"></i>
+          </div>
+          <div class="brand-text">
+            <h1>Aaradhya</h1>
+            <p>Divine Mist</p>
+          </div>
+        </a>
+
+        <!-- Desktop Navigation Menu -->
+        <nav class="nav-menu" aria-label="Main Navigation">
+          <a href="#home" class="nav-link active">Home</a>
+          <a href="#collections" class="nav-link">Collections</a>
+          <a href="#shop" class="nav-link">Sacred Shop</a>
+          <a href="#story" class="nav-link">Vedic Heritage</a>
+          <a href="#reviews" class="nav-link">Devotee Reviews</a>
+          <a href="#track" class="nav-link">Track Order</a>
+        </nav>
+
+        <!-- Header Actions: Search, Wishlist, Cart, Mobile Toggle -->
+        <div class="header-actions">
+          <a href="#shop" class="action-btn" title="Search Products" onclick="document.getElementById('shop-search-input').focus();">
+            <i class="fa-solid fa-magnifying-glass"></i>
+          </a>
+
+          <button class="action-btn" id="wishlist-trigger" title="Devotional Wishlist">
+            <i class="fa-regular fa-heart"></i>
+            <span class="badge-count" id="wishlist-badge-count" style="display:none;">0</span>
+          </button>
+
+          <button class="action-btn" id="cart-drawer-trigger" title="Sacred Cart">
+            <i class="fa-solid fa-bag-shopping"></i>
+            <span class="badge-count" id="cart-badge-count" style="display:none;">0</span>
+          </button>
+
+          <button class="action-btn mobile-menu-btn" id="mobile-menu-toggle" aria-label="Open Mobile Menu">
+            <i class="fa-solid fa-bars"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- =========================================================================
+       Mobile Nav Drawer
+       ========================================================================= -->
+  <div class="mobile-nav" id="mobile-nav">
+    <div class="mobile-nav-content">
+      <div>
+        <div class="mobile-nav-header">
+          <div class="brand-logo-wrap">
+            <div class="brand-emblem" style="width:36px; height:36px;">
+              <i class="fa-solid fa-om" style="font-size:1.1rem;"></i>
+            </div>
+            <div class="brand-text">
+              <h2 style="font-family:var(--font-serif); font-size:1.05rem; color:var(--forest-800);">Aaradhya</h2>
+              <p>Divine Mist</p>
+            </div>
+          </div>
+          <button class="close-btn" id="mobile-nav-close" aria-label="Close Mobile Menu">
+            <i class="fa-solid fa-xmark"></i>
+          </button>
+        </div>
+
+        <div class="mobile-links">
+          <a href="#home" class="mobile-link">Home <i class="fa-solid fa-chevron-right" style="font-size:0.75rem;"></i></a>
+          <a href="#collections" class="mobile-link">Collections <i class="fa-solid fa-chevron-right" style="font-size:0.75rem;"></i></a>
+          <a href="#shop" class="mobile-link">Sacred Shop <i class="fa-solid fa-chevron-right" style="font-size:0.75rem;"></i></a>
+          <a href="#story" class="mobile-link">Vedic Heritage <i class="fa-solid fa-chevron-right" style="font-size:0.75rem;"></i></a>
+          <a href="#reviews" class="mobile-link">Devotee Reviews <i class="fa-solid fa-chevron-right" style="font-size:0.75rem;"></i></a>
+          <a href="#track" class="mobile-link">Track Order <i class="fa-solid fa-chevron-right" style="font-size:0.75rem;"></i></a>
+          <a href="#faq" class="mobile-link">Vedic FAQs <i class="fa-solid fa-chevron-right" style="font-size:0.75rem;"></i></a>
+        </div>
+      </div>
+
+      <div style="border-top:1px solid var(--border-light); padding-top:1.5rem; font-size:0.85rem; color:var(--text-muted);">
+        <p style="margin-bottom:0.5rem;"><i class="fa-solid fa-phone text-gold"></i> 1800-208-1080 (Toll-Free)</p>
+        <p><i class="fa-regular fa-envelope text-gold"></i> care@aaradhyadivinemist.com</p>
+      </div>
+    </div>
+  </div>
+
+  <main>
+    <!-- =========================================================================
+         3. Cinematic Hero Section
+         ========================================================================= -->
+    <section class="hero" id="home">
+      <div class="hero-smoke-pattern"></div>
+      <div class="container">
+        <div class="hero-grid">
+          <div class="hero-content">
+            <div class="hero-badge-shloka">
+              <i class="fa-solid fa-sparkles"></i> ॥ ॐ श्री आराधयाय नमः ॥ Pure Vedic Fragrance
+            </div>
+            <h2 class="hero-title">
+              Way to Connect <em>Your Aaradhya</em>
+            </h2>
+            <p class="hero-desc">
+              Experience 100% charcoal-free, slow-burning holy agarbattis, authentic Mysore sandalwood, and sacred temple flower distillates crafted to awaken inner stillness and sacred devotional energy.
+            </p>
+            <div class="hero-cta-group">
+              <a href="#shop" class="btn btn-gold">
+                <i class="fa-solid fa-bag-shopping"></i> Explore Divine Offerings
+              </a>
+              <a href="#story" class="btn btn-outline-gold">
+                <i class="fa-solid fa-book-open"></i> Our Vedic Promise
+              </a>
+            </div>
+
+            <!-- Trust Badges -->
+            <div class="hero-trust-badges">
+              <div class="trust-item">
+                <i class="fa-solid fa-seedling"></i>
+                <span>100% Charcoal-Free</span>
+              </div>
+              <div class="trust-item">
+                <i class="fa-solid fa-spa"></i>
+                <span>Temple Holy Flowers</span>
+              </div>
+              <div class="trust-item">
+                <i class="fa-solid fa-fire-burner"></i>
+                <span>Mysore Sandalwood</span>
+              </div>
+              <div class="trust-item">
+                <i class="fa-solid fa-truck-fast"></i>
+                <span>Pan-India Delivery</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Hero Visual Card -->
+          <div class="hero-visual">
+            <div class="hero-card-frame">
+              <img src="images/hero/hero-incense.svg" alt="Aaradhya Divine Incense and Altar" class="hero-img">
+              <div class="hero-card-meta">
+                <div style="text-align:left;">
+                  <h4>Mysore Sandalwood & Damask Rose</h4>
+                  <span>Vedic Sacred Formulation</span>
+                </div>
+                <div style="color:var(--gold-500); font-size:1.1rem;">
+                  <i class="fa-solid fa-star"></i> 5.0
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================================
+         4. Curated Collections
+         ========================================================================= -->
+    <section class="section-padding" id="collections">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-shloka">॥ पवित्र संग्रह ॥</span>
+          <h2 class="section-title">Shop by Sacred Collection</h2>
+          <div class="gold-divider"></div>
+          <p class="section-desc">
+            Explore carefully categorized Vedic formulations hand-dipped in pure therapeutic essential oils for puja, meditation, and daily wellness.
+          </p>
+        </div>
+
+        <div class="collections-grid" id="collections-grid">
+          <!-- Dynamically Rendered by JS -->
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================================
+         5. Interactive Sacred Shop
+         ========================================================================= -->
+    <section class="section-padding" id="shop" style="background:var(--ivory-50); border-top:1px solid var(--border-light); border-bottom:1px solid var(--border-light);">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-shloka">॥ दिव्य उत्पाद ॥</span>
+          <h2 class="section-title">Sacred Incense & Pooja Offerings</h2>
+          <div class="gold-divider"></div>
+          <p class="section-desc">
+            Each agarbatti stick is slow-rolled with herbal wood powder, resins, and pure essential oils—guaranteed non-toxic and soot-free.
+          </p>
+        </div>
+
+        <!-- Shop Controls: Filters, Search, Sort -->
+        <div class="shop-controls">
+          <div class="filter-pills">
+            <button class="filter-btn active" data-category="all">All Sacred Items</button>
+            <button class="filter-btn" data-category="sandalwood-collection">Sandalwood</button>
+            <button class="filter-btn" data-category="floral-collection">Temple Floral</button>
+            <button class="filter-btn" data-category="premium-agarbatti">Premium Agarbatti</button>
+            <button class="filter-btn" data-category="dhoop-collection">Desi Cow Dhoop</button>
+            <button class="filter-btn" data-category="gift-collections">Royal Gift Boxes</button>
+          </div>
+
+          <div class="shop-search-sort">
+            <div class="search-input-box">
+              <i class="fa-solid fa-magnifying-glass"></i>
+              <input type="text" id="shop-search-input" placeholder="Search chandan, rose, dhoop...">
+            </div>
+            <select class="sort-select" id="shop-sort-select" aria-label="Sort Products">
+              <option value="featured">Featured Offerings</option>
+              <option value="price-low">Price: Low to High</option>
+              <option value="price-high">Price: High to Low</option>
+              <option value="rating">Highest Rated</option>
+              <option value="name">Alphabetical</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- Products Grid -->
+        <div class="products-grid" id="products-grid">
+          <!-- Dynamically Rendered by JS -->
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================================
+         6. Brand Story & Vedic Heritage
+         ========================================================================= -->
+    <section class="section-padding story-section" id="story">
+      <div class="container">
+        <div class="story-grid">
+          <div class="story-content">
+            <span class="section-shloka">॥ हमारी वैदिक परम्परा ॥</span>
+            <h3 class="font-serif">The Sacred Philosophy of Aaradhya Divine Mist</h3>
+            
+            <div class="shloka-quote-box">
+              <p>॥ ॐ त्र्यम्बकं यजामहे सुगन्धिं पुष्टिवर्धनम् ॥</p>
+              <span>"Honoring the Divine Essence that Nourishes All Senses"</span>
+            </div>
+
+            <p>
+              In ancient Bharat, dhoop and agarbatti were never mere room fresheners. They were sacred carriers of mantra vibrations, consecrated with solar-dried cow dung, pure sandalwood, guggul, and sacred herbs to disinfect spaces and uplift consciousness.
+            </p>
+            <p>
+              Modern commercial incense has sadly replaced natural resins with petroleum charcoal, synthetic chemical perfumes, and toxic burning agents that cause cough and headaches.
+            </p>
+            <p>
+              <strong>Aaradhya Divine Mist</strong> restores the pristine Vedic tradition. We collect floral offerings from holy temples, sun-dry them, and blend them with authentic Mysore Chandan and pure botanical gums to create zero-carbon, soothing divine smoke.
+            </p>
+
+            <!-- Comparison Table -->
+            <div class="comparison-box">
+              <h4>Aaradhya Divine Mist vs. Conventional Agarbatti</h4>
+              <table class="comparison-table">
+                <thead>
+                  <tr>
+                    <th>Feature</th>
+                    <th>Aaradhya Divine Mist</th>
+                    <th>Ordinary Market Agarbatti</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><strong>Charcoal Content</strong></td>
+                    <td class="highlight-green"><i class="fa-solid fa-circle-check"></i> 100% Charcoal-Free</td>
+                    <td class="highlight-red"><i class="fa-solid fa-circle-xmark"></i> Black Coal Powder</td>
+                  </tr>
+                  <tr>
+                    <td><strong>Fragrance Source</strong></td>
+                    <td class="highlight-green"><i class="fa-solid fa-circle-check"></i> Temple Flowers & Essential Oils</td>
+                    <td class="highlight-red"><i class="fa-solid fa-circle-xmark"></i> Synthetic Diethyl Phthalate (DEP)</td>
+                  </tr>
+                  <tr>
+                    <td><strong>Smoke Impact</strong></td>
+                    <td class="highlight-green"><i class="fa-solid fa-circle-check"></i> Soothing & Non-Irritant</td>
+                    <td class="highlight-red"><i class="fa-solid fa-circle-xmark"></i> Toxic Black Soot & Eye Burning</td>
+                  </tr>
+                  <tr>
+                    <td><strong>Child & Elderly Safe</strong></td>
+                    <td class="highlight-green"><i class="fa-solid fa-circle-check"></i> 100% Breathable & Safe</td>
+                    <td class="highlight-red"><i class="fa-solid fa-circle-xmark"></i> Inhalation Hazards</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <div class="story-visual-wrap">
+            <img src="images/story/temple-puja.svg" alt="Traditional Indian Temple Puja by Aaradhya" class="story-img-main">
+            <div style="background:var(--forest-800); color:var(--ivory-100); border-radius:var(--radius-md); padding:1.5rem; margin-top:1.5rem; border:1px solid var(--border-gold);">
+              <h4 style="font-family:var(--font-serif); font-size:1.15rem; color:var(--gold-500); margin-bottom:0.4rem;">
+                <i class="fa-solid fa-hands-praying"></i> Our Purity Pledge
+              </h4>
+              <p style="font-size:0.88rem; color:var(--sage-100); line-height:1.6;">
+                Every box leaving our sanctum is consecrated with peaceful Vedic chants, ensuring your sacred pooja room receives only pure sattvic vibration.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================================
+         7. Why Devotees Choose Aaradhya (Pillars)
+         ========================================================================= -->
+    <section class="section-padding" style="background:var(--ivory-100);">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-shloka">॥ चार पवित्र स्तम्भ ॥</span>
+          <h2 class="section-title">Why Devotees Across India Trust Us</h2>
+          <div class="gold-divider"></div>
+          <p class="section-desc">
+            Crafted with devotional reverence, therapeutic purity, and environmentally conscious Vedic craftsmanship.
+          </p>
+        </div>
+
+        <div class="pillars-grid">
+          <div class="pillar-card">
+            <div class="pillar-icon"><i class="fa-solid fa-leaf"></i></div>
+            <h3 class="pillar-title">100% Charcoal-Free</h3>
+            <p class="pillar-desc">Leaves no black ash marks or toxic carbon monoxide in your sanctuary. Clean, crisp white smoke.</p>
+          </div>
+          <div class="pillar-card">
+            <div class="pillar-icon"><i class="fa-solid fa-spa"></i></div>
+            <h3 class="pillar-title">Sacred Temple Flowers</h3>
+            <p class="pillar-desc">Reclaimed rose and marigold petals from sanctified Indian pilgrimage temples transformed into divine aroma.</p>
+          </div>
+          <div class="pillar-card">
+            <div class="pillar-icon"><i class="fa-solid fa-hands-praying"></i></div>
+            <h3 class="pillar-title">Vedic Formulations</h3>
+            <p class="pillar-desc">Blended strictly per Atharva Veda aromatic scriptures with cow ghee, camphor, and botanical resins.</p>
+          </div>
+          <div class="pillar-card">
+            <div class="pillar-icon"><i class="fa-solid fa-box"></i></div>
+            <h3 class="pillar-title">Airtight Gold Casing</h3>
+            <p class="pillar-desc">Moisture-locked luxury packaging preserves precious natural essential oils for up to 24 months.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================================
+         8. Devotee Reviews & Testimonials
+         ========================================================================= -->
+    <section class="section-padding reviews-section" id="reviews">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-shloka">॥ भक्त अनुभव ॥</span>
+          <h2 class="section-title">Verified Devotee Testimonials</h2>
+          <div class="gold-divider"></div>
+          <p class="section-desc">
+            Read heartfelt experiences from families across Bengaluru, Chennai, Mumbai, Jaipur, and Delhi who sanctify their homes with Aaradhya.
+          </p>
+        </div>
+
+        <div class="reviews-grid" id="reviews-grid">
+          <!-- Dynamically Rendered by JS -->
+        </div>
+
+        <div class="reviews-cta-wrap">
+          <button class="btn btn-outline-gold" id="open-review-modal-btn">
+            <i class="fa-solid fa-pen-nib"></i> Share Your Devotee Experience
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================================
+         9. Interactive Order Tracking Section
+         ========================================================================= -->
+    <section class="section-padding track-section" id="track">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-shloka">॥ आदेश स्थिति ॥</span>
+          <h2 class="section-title">Track Your Sacred Shipment</h2>
+          <div class="gold-divider"></div>
+          <p class="section-desc">
+            Enter your Order ID (e.g. <strong>ADM-2026-1001</strong> or <strong>ADM-2026-1002</strong>) to view real-time courier tracking and dispatch progress.
+          </p>
+        </div>
+
+        <div class="track-box">
+          <form class="track-form" onsubmit="event.preventDefault(); searchOrderTracking(document.getElementById('track-order-input').value.trim().toUpperCase());">
+            <input type="text" id="track-order-input" class="track-input" placeholder="Enter Order ID (e.g. ADM-2026-1001)" required>
+            <button type="submit" id="track-order-submit" class="btn btn-forest">Track Order</button>
+          </form>
+
+          <!-- Result Card (shown upon search) -->
+          <div id="track-result-card" class="track-result-card"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================================
+         10. Vedic FAQ Section
+         ========================================================================= -->
+    <section class="section-padding" id="faq" style="background:var(--ivory-50);">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-shloka">॥ संशय निवारण ॥</span>
+          <h2 class="section-title">Frequently Asked Questions</h2>
+          <div class="gold-divider"></div>
+          <p class="section-desc">
+            Everything you need to know about our ingredients, temple flower upcycling, and sacred delivery.
+          </p>
+        </div>
+
+        <div class="faq-wrap">
+          <div class="faq-item">
+            <button class="faq-question">
+              Why should I choose charcoal-free agarbatti over regular ones?
+              <i class="fa-solid fa-chevron-down"></i>
+            </button>
+            <div class="faq-answer">
+              Regular commercial agarbattis use cheap wood charcoal and petroleum binders (DEP) to keep the stick burning, emitting toxic polycyclic aromatic hydrocarbons and carbon soot that causes coughing and respiratory allergies. Aaradhya Divine Mist sticks are 100% charcoal-free, using natural wood dust, herbal resins, and temple flowers to deliver a smooth, clean fragrance that nurtures your health.
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question">
+              How long does an Aaradhya agarbatti stick burn?
+              <i class="fa-solid fa-chevron-down"></i>
+            </button>
+            <div class="faq-answer">
+              Each 9-inch agarbatti burns smoothly for 45 to 50 minutes. Because our incense sticks are infused with high-potency natural oils, the sacred aroma lingers gently in your prayer room and living spaces for 4 to 6 hours after burning.
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question">
+              Are these safe around infants, elderly, and pets?
+              <i class="fa-solid fa-chevron-down"></i>
+            </button>
+            <div class="faq-answer">
+              Yes, absolutely. Because there is zero chemical charcoal and no artificial aerosol fragrance, our smoke does not trigger sinus irritation or asthma reactions. We recommend burning in well-ventilated puja spaces on an incense stand.
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question">
+              How are holy temple flowers gathered and prepared?
+              <i class="fa-solid fa-chevron-down"></i>
+            </button>
+            <div class="faq-answer">
+              We collect fresh floral offerings—primarily Damask rose, marigold, and parijat—from partner temples before they reach water bodies. They are sorted reverently, washed in pure water, solar-dried in hygienic drying houses, and finely ground into aromatic floral bases.
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question">
+              What are your shipping timelines across India?
+              <i class="fa-solid fa-chevron-down"></i>
+            </button>
+            <div class="faq-answer">
+              We dispatch all orders within 24 hours via premium express couriers (Blue Dart and Delhivery). Metro cities receive delivery in 2-3 business days, while other regions take 3-5 business days. Orders above ₹799 qualify for FREE Express Shipping!
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================================
+         11. Devotee Circle Newsletter
+         ========================================================================= -->
+    <section class="newsletter-section">
+      <div class="container">
+        <div class="newsletter-box">
+          <div style="font-size:1.8rem; color:var(--gold-500); margin-bottom:0.75rem;"><i class="fa-solid fa-om"></i></div>
+          <h3>Join the Aaradhya Devotee Circle</h3>
+          <p>
+            Receive Vedic panchang tithi notifications, festive pooja vidhi guides, and private devotee discounts directly to your inbox.
+          </p>
+          <form class="newsletter-form" id="newsletter-form">
+            <input type="email" id="newsletter-email" class="newsletter-input" placeholder="Enter your sacred email address" required>
+            <button type="submit" class="btn btn-gold">Subscribe for Blessings</button>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- =========================================================================
+       12. Luxury Brand Footer
+       ========================================================================= -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <!-- Brand Col -->
+        <div class="footer-col footer-about">
+          <div class="brand-logo-wrap" style="margin-bottom:1.25rem;">
+            <div class="brand-emblem" style="background:var(--gold-600); color:var(--forest-900);">
+              <i class="fa-solid fa-om" style="font-size:1.3rem;"></i>
+            </div>
+            <div class="brand-text">
+              <h3 style="font-family:var(--font-serif); font-size:1.2rem; color:var(--gold-500); letter-spacing:0.08em;">AARADHYA</h3>
+              <p style="color:var(--sage-100); font-size:0.7rem;">Way to connect your Aaradhya</p>
+            </div>
+          </div>
+          <p>
+            Aaradhya Divine Mist is India’s premier luxury spiritual fragrance house dedicated to elevating daily worship with Vedic purity, charcoal-free agarbatti, authentic Mysore Chandan, and holy temple attars.
+          </p>
+          <div class="social-links">
+            <a href="https://instagram.com" target="_blank" rel="noopener" class="social-link" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
+            <a href="https://facebook.com" target="_blank" rel="noopener" class="social-link" title="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="https://youtube.com" target="_blank" rel="noopener" class="social-link" title="YouTube"><i class="fa-brands fa-youtube"></i></a>
+            <a href="https://wa.me/919876543210" target="_blank" rel="noopener" class="social-link" title="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+          </div>
+        </div>
+
+        <!-- Collections Col -->
+        <div class="footer-col">
+          <h4>Sacred Collections</h4>
+          <ul class="footer-links">
+            <li><a href="#shop" onclick="filterByCategory('sandalwood-collection')">Mysore Sandalwood</a></li>
+            <li><a href="#shop" onclick="filterByCategory('floral-collection')">Temple Floral Attars</a></li>
+            <li><a href="#shop" onclick="filterByCategory('premium-agarbatti')">Premium Agarbatti</a></li>
+            <li><a href="#shop" onclick="filterByCategory('dhoop-collection')">Gir Cow Loban Dhoop</a></li>
+            <li><a href="#shop" onclick="filterByCategory('gift-collections')">Royal Pooja Gift Hampers</a></li>
+            <li><a href="#shop" onclick="filterByCategory('daily-pooja-essentials')">Daily Pooja Essentials</a></li>
+          </ul>
+        </div>
+
+        <!-- Quick Links -->
+        <div class="footer-col">
+          <h4>Devotee Care</h4>
+          <ul class="footer-links">
+            <li><a href="#track">Track Order Status</a></li>
+            <li><a href="#story">Our Vedic Heritage</a></li>
+            <li><a href="#reviews">Devotee Testimonials</a></li>
+            <li><a href="#faq">Frequently Asked Questions</a></li>
+            <li><a href="tel:18002081080">Toll-Free Helpline</a></li>
+            <li><a href="#home">Shipping & Returns Policy</a></li>
+          </ul>
+        </div>
+
+        <!-- Contact Col -->
+        <div class="footer-col footer-contact">
+          <h4>Devotee Sanctum</h4>
+          <p><i class="fa-solid fa-location-dot"></i> Aaradhya Divine Fragrances Pvt Ltd, 108 Sacred Grove, Udyog Vihar, Gurugram, Haryana 122016, India</p>
+          <p><i class="fa-solid fa-phone"></i> Toll-Free: 1800-208-1080</p>
+          <p><i class="fa-brands fa-whatsapp"></i> WhatsApp: +91 98765 43210</p>
+          <p><i class="fa-regular fa-envelope"></i> care@aaradhyadivinemist.com</p>
+        </div>
+      </div>
+
+      <!-- Indian Legal Metrology Compliance Box -->
+      <div class="compliance-box">
+        <strong>Mandatory Indian Legal Metrology & Consumer Protection (E-Commerce) Rules Compliance:</strong><br>
+        <strong>Manufacturer:</strong> Aaradhya Divine Fragrances Pvt Ltd, Survey No. 44, Fragrance Valley, Mysore, Karnataka 570008.<br>
+        <strong>Packer & Marketer:</strong> Aaradhya Divine Fragrances Pvt Ltd, Unit 2, Logistics Park, Gurugram, Haryana 122016.<br>
+        <strong>Country of Origin:</strong> Bharat (India) | <strong>Consumer Care Officer:</strong> care@aaradhyadivinemist.com | Toll-Free: 1800-208-1080 (Mon-Sat 9 AM - 7 PM).
+      </div>
+
+      <!-- Footer Bottom -->
+      <div class="footer-bottom">
+        <div>
+          © 2026 Aaradhya Divine Mist Pvt Ltd. All Sacred Rights Reserved. Made with Devotion in Bharat.
+        </div>
+        <div class="payment-badges" title="Accepted Payment Methods: UPI, Cards, NetBanking">
+          <i class="fa-brands fa-google-pay" title="Google Pay"></i>
+          <i class="fa-brands fa-cc-visa" title="Visa"></i>
+          <i class="fa-brands fa-cc-mastercard" title="Mastercard"></i>
+          <i class="fa-solid fa-building-columns" title="Net Banking"></i>
+          <i class="fa-solid fa-money-bill-wave" title="Cash on Delivery"></i>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- =========================================================================
+       Slide-In Sacred Cart Drawer
+       ========================================================================= -->
+  <div class="cart-drawer-overlay" id="cart-drawer-overlay">
+    <div class="cart-drawer">
+      <div class="cart-header">
+        <h3><i class="fa-solid fa-bag-shopping text-gold"></i> Sacred Cart</h3>
+        <button class="close-btn" id="cart-drawer-close" aria-label="Close Cart">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+      </div>
+
+      <!-- Free Shipping Meter -->
+      <div class="shipping-meter-wrap">
+        <div class="shipping-meter-text" id="shipping-meter-status">
+          Add items to enjoy <strong>FREE Delivery</strong>
+        </div>
+        <div class="shipping-bar-bg">
+          <div class="shipping-bar-fill" id="shipping-meter-fill"></div>
+        </div>
+      </div>
+
+      <!-- Cart Items Body -->
+      <div class="cart-items-body" id="cart-items-body">
+        <!-- Rendered by JS -->
+      </div>
+
+      <!-- Empty State View -->
+      <div class="empty-cart-view" id="cart-empty-view">
+        <i class="fa-solid fa-basket-shopping"></i>
+        <h4>Your Sacred Cart is Empty</h4>
+        <p>Explore our charcoal-free agarbattis and fragrant pooja essentials.</p>
+        <button class="btn btn-gold" id="cart-continue-shopping">Start Sacred Shopping</button>
+      </div>
+
+      <!-- Cart Footer / Checkout -->
+      <div class="cart-footer" id="cart-footer-section" style="display:none;">
+        <div class="promo-form">
+          <input type="text" id="cart-promo-input" class="promo-input" placeholder="Coupon Code (e.g. DIVINE10)">
+          <button type="button" class="btn-promo-apply" id="apply-promo-btn">Apply</button>
+        </div>
+
+        <div class="bill-rows">
+          <div class="bill-row">
+            <span>Subtotal</span>
+            <span id="cart-subtotal">₹0</span>
+          </div>
+          <div class="bill-row" id="cart-discount-row" style="display:none; color:#15803d; font-weight:600;">
+            <span>Vedic Discount</span>
+            <span id="cart-discount-value">- ₹0</span>
+          </div>
+          <div class="bill-row">
+            <span>Delivery Fee</span>
+            <span id="cart-shipping">FREE</span>
+          </div>
+          <div class="bill-row total">
+            <span>Grand Total</span>
+            <span id="cart-grand-total">₹0</span>
+          </div>
+        </div>
+
+        <button class="btn-checkout" id="cart-checkout-btn">
+          <span>Proceed to Sacred Checkout</span>
+          <i class="fa-solid fa-arrow-right"></i>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- =========================================================================
+       Quick View Modal
+       ========================================================================= -->
+  <div class="modal-overlay" id="quickview-modal-overlay">
+    <div class="modal-card">
+      <button class="modal-close-btn" id="quickview-close" aria-label="Close Quick View">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+      <div id="quickview-modal-content">
+        <!-- Dynamic content from JS -->
+      </div>
+    </div>
+  </div>
+
+  <!-- =========================================================================
+       Devotional Wishlist Modal
+       ========================================================================= -->
+  <div class="modal-overlay" id="wishlist-modal-overlay">
+    <div class="modal-card" style="max-width:550px;">
+      <button class="modal-close-btn" onclick="closeWishlistModal()" aria-label="Close Wishlist">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+      <h3 class="font-serif" style="font-size:1.4rem; color:var(--forest-800); margin-bottom:1rem; display:flex; align-items:center; gap:0.5rem;">
+        <i class="fa-solid fa-heart text-gold"></i> Saved Devotional Offerings
+      </h3>
+      <div id="wishlist-items-container">
+        <!-- Rendered by JS -->
+      </div>
+    </div>
+  </div>
+
+  <!-- =========================================================================
+       Sacred Checkout Modal
+       ========================================================================= -->
+  <div class="modal-overlay" id="checkout-modal-overlay">
+    <div class="modal-card" style="max-width:650px;">
+      <button class="modal-close-btn" id="checkout-close" aria-label="Close Checkout">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+      
+      <div style="text-align:center; margin-bottom:1.5rem;">
+        <div style="font-size:1.8rem; color:var(--gold-500);"><i class="fa-solid fa-shield-halved"></i></div>
+        <h3 class="font-serif" style="font-size:1.6rem; color:var(--forest-800);">Complete Your Sacred Order</h3>
+        <p style="font-size:0.88rem; color:var(--text-muted);">Encrypted & Safe Pan-India Devotee Dispatch</p>
+      </div>
+
+      <form id="sacred-checkout-form" class="checkout-steps-wrap">
+        <!-- Step 1: Devotee Details -->
+        <div class="checkout-group">
+          <h4>1. Delivery Address</h4>
+          <div class="form-grid-2">
+            <div class="form-field">
+              <label for="cust-name">Full Name *</label>
+              <input type="text" id="cust-name" required placeholder="e.g. Ananya Sharma">
+            </div>
+            <div class="form-field">
+              <label for="cust-phone">WhatsApp / Phone *</label>
+              <input type="tel" id="cust-phone" required placeholder="e.g. 9876543210">
+            </div>
+          </div>
+          <div class="form-field" style="margin-top:0.75rem;">
+            <label for="cust-email">Email Address *</label>
+            <input type="email" id="cust-email" required placeholder="For invoice & order dispatch tracking">
+          </div>
+          <div class="form-field" style="margin-top:0.75rem;">
+            <label for="cust-address">House / Apartment / Street Address *</label>
+            <input type="text" id="cust-address" required placeholder="Flat No., Building Name, Street">
+          </div>
+          <div class="form-grid-2" style="margin-top:0.75rem;">
+            <div class="form-field">
+              <label for="cust-city">City / District *</label>
+              <input type="text" id="cust-city" required placeholder="e.g. Bengaluru">
+            </div>
+            <div class="form-field">
+              <label for="cust-pincode">Pincode *</label>
+              <input type="text" id="cust-pincode" required placeholder="e.g. 560038" maxlength="6">
+            </div>
+          </div>
+        </div>
+
+        <!-- Step 2: Payment Method -->
+        <div class="checkout-group">
+          <h4>2. Payment Method</h4>
+          <div class="payment-methods-grid">
+            <label class="payment-radio-card active">
+              <input type="radio" name="payment_method" value="upi" checked>
+              <div>
+                <strong>UPI / QR</strong>
+                <div style="font-size:0.75rem; color:var(--text-muted);">GPay, PhonePe, Paytm, BHIM</div>
+              </div>
+            </label>
+            <label class="payment-radio-card">
+              <input type="radio" name="payment_method" value="card">
+              <div>
+                <strong>Debit / Credit Card</strong>
+                <div style="font-size:0.75rem; color:var(--text-muted);">Visa, MasterCard, RuPay</div>
+              </div>
+            </label>
+            <label class="payment-radio-card">
+              <input type="radio" name="payment_method" value="netbanking">
+              <div>
+                <strong>Net Banking</strong>
+                <div style="font-size:0.75rem; color:var(--text-muted);">All major Indian banks</div>
+              </div>
+            </label>
+            <label class="payment-radio-card">
+              <input type="radio" name="payment_method" value="cod">
+              <div>
+                <strong>Cash on Delivery</strong>
+                <div style="font-size:0.75rem; color:var(--text-muted);">Pay upon safe delivery</div>
+              </div>
+            </label>
+          </div>
+        </div>
+
+        <!-- Step 3: Order Summary breakdown -->
+        <div style="background:var(--ivory-100); border:1px solid var(--border-light); border-radius:8px; padding:1rem; font-size:0.88rem;">
+          <div style="display:flex; justify-content:space-between; margin-bottom:0.35rem;">
+            <span>Items Subtotal:</span>
+            <span id="checkout-summary-subtotal" style="font-weight:600;">₹0</span>
+          </div>
+          <div style="display:flex; justify-content:space-between; margin-bottom:0.35rem; color:#15803d;">
+            <span>Coupon Discount:</span>
+            <span id="checkout-summary-discount" style="font-weight:600;">₹0</span>
+          </div>
+          <div style="display:flex; justify-content:space-between; margin-bottom:0.35rem;">
+            <span>Express Delivery:</span>
+            <span id="checkout-summary-shipping" style="font-weight:600;">FREE</span>
+          </div>
+          <div style="display:flex; justify-content:space-between; font-size:1.1rem; font-weight:700; color:var(--forest-800); border-top:1px solid var(--border-light); padding-top:0.5rem; margin-top:0.3rem;">
+            <span>Total Payable:</span>
+            <span id="checkout-summary-total">₹0</span>
+          </div>
+        </div>
+
+        <button type="submit" class="btn btn-gold" style="width:100%; padding:0.95rem; font-size:1.05rem;">
+          <i class="fa-solid fa-lock"></i> Place Sacred Order
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <!-- =========================================================================
+       Order Success Modal
+       ========================================================================= -->
+  <div class="modal-overlay" id="order-success-modal-overlay">
+    <div class="modal-card" style="max-width:540px; text-align:center;">
+      <div style="width:70px; height:70px; background:#dcfce7; color:#15803d; border-radius:999px; display:flex; align-items:center; justify-content:center; font-size:2.2rem; margin:0 auto 1.25rem;">
+        <i class="fa-solid fa-circle-check"></i>
+      </div>
+      <h3 class="font-serif" style="font-size:1.8rem; color:var(--forest-800); margin-bottom:0.5rem;">॥ आपका आदेश सफल रहा ॥</h3>
+      <p style="color:var(--text-muted); font-size:0.95rem;">
+        Your sacred order has been consecrated and sent to our fragrance packaging team.
+      </p>
+
+      <div id="success-order-details">
+        <!-- Filled by JS -->
+      </div>
+
+      <p style="font-size:0.82rem; color:var(--text-light); margin-bottom:1.5rem;">
+        We have dispatched confirmation details and dispatch tracking SMS to your phone.
+      </p>
+
+      <button class="btn btn-gold" onclick="closeSuccessModal(); window.location.hash = 'track';" style="width:100%;">
+        <i class="fa-solid fa-truck-fast"></i> View Dispatch Tracking
+      </button>
+    </div>
+  </div>
+
+  <!-- =========================================================================
+       Write Devotee Review Modal
+       ========================================================================= -->
+  <div class="modal-overlay" id="review-modal-overlay">
+    <div class="modal-card" style="max-width:550px;">
+      <button class="modal-close-btn" id="review-modal-close" aria-label="Close Review Form">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+
+      <div style="text-align:center; margin-bottom:1.25rem;">
+        <h3 class="font-serif" style="font-size:1.5rem; color:var(--forest-800);">Share Your Devotional Experience</h3>
+        <p style="font-size:0.85rem; color:var(--text-muted);">Guide other devotees in choosing pure spiritual incense</p>
+      </div>
+
+      <form id="devotee-review-form">
+        <div class="form-grid-2">
+          <div class="form-field">
+            <label for="review-author-name">Your Full Name *</label>
+            <input type="text" id="review-author-name" required placeholder="e.g. Meera Ramanathan">
+          </div>
+          <div class="form-field">
+            <label for="review-author-location">City & State *</label>
+            <input type="text" id="review-author-location" required placeholder="e.g. Pune, Maharashtra">
+          </div>
+        </div>
+
+        <div class="form-field" style="margin-top:0.75rem;">
+          <label for="review-product-select">Select Sacred Offering *</label>
+          <select id="review-product-select" required>
+            <option value="Sandalwood Essence Agarbatti">Sandalwood Essence Agarbatti</option>
+            <option value="Divine Rose Incense Sticks">Divine Rose Incense Sticks</option>
+            <option value="Mogra Bliss Agarbatti">Mogra Bliss Agarbatti</option>
+            <option value="Lavender Calm Incense Sticks">Lavender Calm Incense Sticks</option>
+            <option value="Divine Dhoop Pure Cow Dung & Loban Sticks">Divine Dhoop Pure Cow Dung & Loban Sticks</option>
+            <option value="Aaradhya Divine Pooja Kit">Aaradhya Divine Pooja Kit</option>
+          </select>
+        </div>
+
+        <!-- Rating Stars Selector -->
+        <div class="form-field" style="margin-top:0.75rem;">
+          <label>Your Sacred Rating *</label>
+          <div class="star-picker" style="font-size:1.4rem; color:var(--gold-500); cursor:pointer; display:flex; gap:0.4rem;">
+            <i class="fa-solid fa-star" data-val="1"></i>
+            <i class="fa-solid fa-star" data-val="2"></i>
+            <i class="fa-solid fa-star" data-val="3"></i>
+            <i class="fa-solid fa-star" data-val="4"></i>
+            <i class="fa-solid fa-star" data-val="5"></i>
+          </div>
+        </div>
+
+        <div class="form-field" style="margin-top:0.75rem;">
+          <label for="review-title-input">Review Headline *</label>
+          <input type="text" id="review-title-input" required placeholder="e.g. Divine fragrance that calms the senses">
+        </div>
+
+        <div class="form-field" style="margin-top:0.75rem;">
+          <label for="review-comment-input">Your Devotee Testimony *</label>
+          <textarea id="review-comment-input" rows="3" required placeholder="Describe how Aaradhya incense elevated your morning puja or meditation..."></textarea>
+        </div>
+
+        <button type="submit" class="btn btn-gold" style="width:100%; margin-top:1.25rem;">
+          Submit Sacred Review
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Main JavaScript File -->
+  <script src="js/app.js"></script>
+</body>
+</html>
